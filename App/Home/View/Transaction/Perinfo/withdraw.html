@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提现</title>
+    
+    <link rel="stylesheet" href="/Public/Login/css/withdraw.css">
+  
+    <link rel="stylesheet" href="/Public/Login/css/font/iconfont.css">
+ 
+   
+    <link rel="shortcut icon" href="/Public/Login/img/bitbug_favicon.ico" /> 
+    <script src="__PUBLIC__/Admin/js/jquery.js"></script>
+	<!--layer弹窗插件-->
+	<link rel="stylesheet" href="/Public/Login/layui/css/layui.css"/>
+	<script src="/Public/Login/layui/layui.js"></script>
+</head>
+<body>
+    <div class="head">
+            <a href="javascript:history.back(-1)"> 
+         <i class="iconfont icon-xiaoyu">返回</i>
+       </a>
+       <p>提现记录</p>
+    </div>
+    <!-- <div class="list">     
+        <ul>
+            <li>会员手机号</li>
+            <li>到账金额</li>
+            <li>手续费</li>
+            <li>到账时间</li>
+            <li>时间</li>
+        </ul>
+    </div>  -->
+    <div class="table">     
+        <table class="table-list">
+            <tr class="red"  style="color:red; ">
+              <td >会员手机</td>
+              <td>金额</td>
+              <td>手续费</td>
+              <td>时间</td>
+            </tr>
+            <volist name="list" id="vo">    
+            <tr>          
+              <td>{$vo.email}</td>
+              <td>{$vo.money}</td>
+              <td>{$vo.shouxu}</td> 
+              <td>{$vo.time}</td> 
+            </tr>
+        </volist>
+        </table> 
+</div>
+  
+</body>
+</html>
+
+
+ 

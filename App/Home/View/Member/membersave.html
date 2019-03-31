@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>修改会员</title>
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Public/Index/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Public/Index/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/Public/Index/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/Public/Index/css/animate.min.css" rel="stylesheet">
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+</head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><a style="color:#00bb9c;margin-right:5px;" href="/Users/updateuser/uId/1">修改我的资料</a>
+						 </h5>
+                        <div class="ibox-tools">
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" action="" class="form-horizontal" id="form-admin-add" enctype="multipart/form-data"> 
+                                 <div class="form-group">
+                                        <label class="col-sm-5 control-label">真实姓名</label>
+                                        <div class="col-sm-3">
+                                        <input type="text" name="username" value="{$user.username}" class="form-control"  readonly>
+                                        </div>
+                                    </div>
+
+                                 <div class="form-group">
+                                <label class="col-sm-5 control-label">手机号码</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="mobile" value="{$user.mobile}" id="mobile" placeholder="请输入你的11位手机号码" class="form-control" >
+                                    </div>
+                                 </div>
+
+								 
+                                 <div class="form-group">
+                                <label class="col-sm-5 control-label">身份证号码</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="card" maxlength="18" value="{$user.card}" id="card" placeholder="请输入你的身份证号码" class="form-control"  readonly>
+                                    </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                <label class="col-sm-5 control-label">微信号码</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="weixin" value="{$user.weixin}" id="weixin" placeholder="请输入你的微信号码" class="form-control" >
+                                    </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                <label class="col-sm-5 control-label">微信号码</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="erpsd" value="{$user.erpsd}" id="erpsd" placeholder="请输入你的微信号码" class="form-control" >
+                                    </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                <label class="col-sm-5 control-label">支付宝账户</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" name="zhifubao" value="{$user.zhifubao}" id="zhifubao" placeholder="请输入你的支付宝账户" class="form-control">
+                                    </div>
+                                 </div>
+
+                                <div class="form-group">
+                                <label class="col-sm-5 control-label">性别</label>
+
+                                    <div class="col-sm-4">
+                                       <label class="checkbox-inline">
+                                                <input type="radio" value="男" name="gender" <?php if($user['gender']=="男"):?>checked <?php endif?> > 男
+                                            </label>
+                                            <label class="checkbox-inline">
+                                                <input type="radio" value="女" name="gender" <?php if($user['gender']=="女"):?>checked <?php endif?> > 女
+                                            </label>    
+											<label class="checkbox-inline">
+                                                <input type="radio" value="保密" name="gender" <?php if($user['gender']=="保密"):?>checked <?php endif?> > 保密
+                                            </label>   											
+                                    </div>
+                                </div>
+                            <div class="hr-line-dashed"></div>
+                            <div class="hr-line-dashed" style="margin-top:-10px;"></div>
+                            <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-2" style="text-align: center;">
+                                    <input class="btn btn-primary" type="submit" value="修改会员">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/Public/Default/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/Public/Default/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/Public/Default/js/content.min.js?v=1.0.0"></script>
+    <script src="/Public/Default/js/plugins/iCheck/icheck.min.js"></script>
+<script type="text/javascript" src="/Public/Default/check/js/jquery.validate.min.js"></script> 
+<script type="text/javascript" src="/Public/Default/check/js/messages_zh.min.js"></script> 
+<script type="text/javascript" src="/Public/Default/check/js/validate-methods.js"></script> 
+    <script>
+        $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+    </script>
+</body>
+
+</html>

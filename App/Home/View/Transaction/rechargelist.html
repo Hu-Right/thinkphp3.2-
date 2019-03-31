@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html>
+
+
+
+<head>
+
+
+
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+
+
+    <title>我的充值记录</title>
+
+
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Public/Index/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+
+    <link href="/Public/Index/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+
+
+
+    <!-- Data Tables -->
+
+    <link href="/Public/Index/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+
+
+    <link href="/Public/Index/css/animate.min.css" rel="stylesheet">
+
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+    <link href="/Public/Index/css/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<style>
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+   text-align: center;
+}
+</style>
+
+<body class="gray-bg">
+
+    <div class="wrapper wrapper-content animated fadeInRight">
+
+        <div class="row">
+
+            <div class="col-sm-12">
+
+                <div class="ibox float-e-margins">
+
+                    <div class="ibox-title">
+
+                        <h5><a style="color:#00bb9c;margin-right:5px;" >我的充值记录</a></h5>
+
+                        <div class="ibox-tools">
+
+                            
+
+                        </div>
+
+                    </div>
+
+                    <div class="ibox-content">
+
+                        <table class="table table-striped table-bordered table-hover">
+
+                            <thead>
+
+                                <tr>
+
+                                    
+
+                                    <th>ID</th>
+
+                                    <th><span class="dropdown hidden-xs">打款方式</th>
+
+                                    <th>打款帐号</th>
+
+                                    <th class="dropdown hidden-xs">打款名称</th>
+
+									<th class="dropdown hidden-xs">打款金额</th>
+
+									<th class="dropdown hidden-xs">状态</th>
+
+									<th class="dropdown hidden-xs">留言</th>
+
+                                    <th class="dropdown hidden-xs">打款时间</th>
+
+                                 
+
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+							<volist name="list" id="vo">
+
+                            <tr class="gradeX">
+
+									<td class="dropdown hidden-xs">{$vo.id}</td>
+
+									<td class="dropdown hidden-xs">{$vo.mode}</td>
+
+                                    <td class="dropdown hidden-xs">{$vo.accounts}</td>
+
+                                    <td class="dropdown hidden-xs">{$vo.name}</td>
+
+									<td class="dropdown hidden-xs">{$vo.money}</td>
+
+									<td class="dropdown hidden-xs"><?php if($vo['type']==0):?>审核中<?php endif;?><?php if($vo['type']==1):?>充值成功<?php endif;?><?php if($vo['type']==2):?>充值失败<?php endif;?></td>
+
+									<td class="dropdown hidden-xs">{$vo.info}</td>
+
+									<td class="dropdown hidden-xs">{$vo.time}</td>
+
+                                </tr>  
+
+							</volist>								
+
+                            </tbody>
+
+                            
+
+                        </table>
+
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+			
+
+			
+
+			
+
+        </div>
+        <div class="pages">{$page}</div>
+    </div>
+
+    <script src="/Public/Default/js/jquery.min.js?v=2.1.4"></script>
+
+    <script src="/Public/Default/js/bootstrap.min.js?v=3.3.6"></script>
+
+    <script src="/Public/Default/js/plugins/jeditable/jquery.jeditable.js"></script>
+
+    <script src="/Public/Default/js/plugins/dataTables/jquery.dataTables.js"></script>
+
+    <script src="/Public/Default/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+
+    <script src="/Public/Default/js/content.min.js?v=1.0.0"></script>
+
+    <script>
+
+        $(document).ready(function(){$(".dataTables-example").dataTable();var oTable=$("#editable").dataTable();oTable.$("td").editable("../example_ajax.php",{"callback":function(sValue,y){var aPos=oTable.fnGetPosition(this);oTable.fnUpdate(sValue,aPos[0],aPos[1])},"submitdata":function(value,settings){return{"row_id":this.parentNode.getAttribute("id"),"column":oTable.fnGetPosition(this)[2]}},"width":"90%","height":"100%"})});function fnClickAddRow(){$("#editable").dataTable().fnAddData(["Custom row","New row","New row","New row","New row"])};
+
+    </script>
+
+
+
+</body>
+
+
+
+</html>

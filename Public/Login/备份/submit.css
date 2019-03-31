@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+a,ul,li{
+    text-decoration: none;
+    list-style: none;
+    color:#000;
+}
+body{
+   font-family: "宋体";
+   background:#FFFFFF;
+}
+
+.centre{
+    width:100%;
+    height:3rem;
+    background:#DE4410;
+    font-size:1.3rem;
+    line-height: 3rem;
+    color:#fff;
+    font-family: "宋体";
+    position: relative;
+    text-align: center;
+}
+.centre a  i{
+    float: left;
+    color:#fff;
+    font-size:1rem;
+    margin-left: 0.2rem;  
+}
+.centre p{
+    margin-right: 3rem;
+}
+.text{
+    width:100%;
+    height:3rem;
+    color:#373737;
+    line-height: 3rem;
+    font-size:1.3rem; 
+    text-align: center; 
+}
+.name{
+    width:90%;
+    height:4.5rem;
+    margin: auto;
+    background:#E2E2E2;
+}
+.name img{
+    float: left;
+    margin: 0.5rem 1rem 0 0.5rem; 
+}
+.name span{
+    color:#646989;
+    font-size:1.2rem;
+    line-height: 2rem;
+}
+.name p{
+    color:#636363;
+    font-size:0.5rem;
+    margin-left: 1rem;
+}
+.img{
+    width:90%;
+    height:25rem;
+    margin:0.5rem auto;
+    
+}
+.img .img-list{
+    width:32%;
+    height:14rem;
+    float: left;
+}
+.img .img-list img{
+    width:100%;
+    
+}
+.img .img-list p{
+    color:#696969;
+    font-size:0.3rem;
+    margin-top: 0.3rem;
+}
+
+
+.img .img1{
+   width:32%;
+   height:10rem;
+   float: left;
+   margin-left: 0.4rem;
+}
+.img .img1 img{
+    width:100%;
+}
+.img .img1 p{
+    color:#696969;
+    font-size:0.1rem;
+}
+.img .img2{
+   width:32%;
+   height:10rem;
+   float: right;
+}
+.img .img2 img{
+    width:100%;
+}

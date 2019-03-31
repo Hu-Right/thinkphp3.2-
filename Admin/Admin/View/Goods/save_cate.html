@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+
+  
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta name="renderer" content="webkit">
+
+    <title></title>
+
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/pintuer.css">
+
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/admin.css">
+
+    <script src="__PUBLIC__/Admin/js/jquery.js"></script>
+
+    <script src="__PUBLIC__/Admin/js/pintuer.js"></script>
+    <style>
+        .iptdiv{
+          display: flex;
+          padding: 10px;
+
+        }
+        .iptdiv div{
+          margin-right: 10px;
+        }
+    </style>
+  </head>
+
+  
+
+  <body>
+
+    <div class="panel admin-panel">
+
+      <div class="panel-head" id="add">
+
+        <strong>
+
+          <span class="iconfont icon-icon-xiugai"></span>商品分类修改</strong>
+
+      </div>
+
+      <div class="body-content">
+
+        <form method="post" class="form-x" action="__SELF__" enctype="multipart/form-data">
+
+          <input type="hidden" name="id" value="{$data.id}">
+
+          <div class="form-group">
+
+            <div class="label">
+
+              <label>分类名称：</label></div>
+
+            <div class="field">
+
+              <input type="text" class="input w50" value="{$data.cg_name}" name="cg_name" data-validate="required:请输入分类名称" />
+
+              <div class="tips"></div>
+
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <div class="label">
+
+              <label>是否显示：</label></div>
+
+            <div class="field">
+
+              <input <?php if($data[ 'is_show']=="是" ) echo 'checked="checked"'; ?>type="radio" name="is_show" maxlength="60" value="是" />是
+
+              <input <?php if($data[ 'is_show']=="否" ) echo 'checked="checked"'; ?>type="radio" name="is_show" maxlength="60" value="否" />否
+
+              <div class="tips"></div></div>
+
+          </div>
+          <!-- 商品多规格 -->
+          <!-- <div class="panel-head" id="add">
+
+            <strong><span class="icon-pencil-square-o"></span>是否开启多规格商品</strong>
+            
+         <div id="div_Old" style="margin-left:50px"></div>         
+             <input type="button" id="adds" value="添加多规格" />
+             <input type="hidden" id="hide" name="sum">
+          </div>
+          </div> -->
+          <div class="form-group">
+          
+            <div class="label">
+          
+              <label></label>
+          
+            </div>
+          
+            <div class="field">
+          
+              <button class="button bg-main icon-icon--" type="submit">确认修改</button></div>
+          
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </body>
+
+<script>
+ var i=1;
+$("#adds").click(function(){
+  $("#div_Old").append('<div class="iptdiv" ><div>规格:<input type="text" name="size'+i+'" /></div><div>颜色:<input type="text" name="color'+i+'" /></div><div>价格:<input type="number" name="price'+i+'" /></div><a href="#" name="rmlink">X</a></div>');
+  i++;
+    bindListener();
+    length();
+})
+    
+function bindListener(){
+    $("a[name=rmlink]").unbind().click(function(){
+        $(this).parent().remove(); 
+        i--;
+        length();
+    })
+}
+
+
+function length(){
+      var length=$('#div_Old').children().length;
+      $("#hide").val(length);
+}
+
+</script>
+
+</html>

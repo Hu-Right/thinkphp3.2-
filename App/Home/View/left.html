@@ -1,0 +1,99 @@
+<nav class="navbar-default navbar-static-side" role="navigation" style="background-color:#a6b08e;border-right: 1px solid #dadada">
+				<div class="nav-close">
+					<i class="fa fa-times-circle"></i>
+				</div> 
+				<div class="slimScrollDiv" style="position: relative; width: auto; height: 100%;">
+					<div class="sidebar-collapse" style="width: auto; height: 100%;">
+						<ul class="nav" id="side-menu">
+							<li class="nav-header">
+								<div class="dropdown profile-element" style="margin-left:40px;">
+									<span>
+										<img alt="image" class="img-circle" src="/Public/Index/css/defaultu_2.jpg" width="80" height="80"></span>
+									
+								</div>
+								<div>
+									<span style="margin-left: 30px;color: #ffffff;font-weight: bold; text-align: center;">ID：{$user.email}</span>
+									<br>
+									<span style="color: #f3fb97;font-weight: bold; margin-left:20px">
+										<?php if($user['type']==0):?>普通会员<?php endif?>
+										<?php if($user['type']==1):?>金卡会员<?php endif?>
+										<?php if($user['type']==2):?>钻石会员<?php endif?>
+									</span>
+							  <a style="color: #ffffff; font-weight: bold; margin-left:15px;" href="__MODULE__/Login/logout">退出登陆</a></div>
+								<div class="logo-element">栏目</div></li>
+							<li>
+								<a href="#">
+									<i class="glyphicon">
+										<img src="/Public/Index/css/my.png" width="24px" height="24px"></i>
+									<span class="nav-label">我的资料</span>
+									<span class="fa arrow"></span>
+								</a>
+								<ul class="nav nav-second-level collapse">
+									<li>
+										<a class="J_menuItem" href="/Home/Member/membersave.html" data-index="0">修改资料</a></li>
+									<li>
+										<a class="J_menuItem" href="/Home/Member/updatepassword.html" data-index="0">修改登陆密码</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">
+									<i class="glyphicon">
+										<img src="/Public/Index/css/tuiguangdt.png" width="24px" height="24px"></i>
+									<span class="nav-label">推广大厅</span>
+									<span class="fa arrow"></span>
+								</a>
+								<ul class="nav nav-second-level collapse">
+									<li><a class="J_menuItem" href="/Home/Member/team.html" data-index="4">我的团队</a></li>
+									<li><a class="J_menuItem" href="/Home/Member/useradd.html" data-index="3">注册会员</a></li>
+									<li><a class="J_menuItem" href="/Home/Member/Recommend.html" data-index="3">我的直推</a></li>
+									<li><a class="J_menuItem" href="/Home/Upgrade/index.html" data-index="3">会员升级</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">
+									<i class="glyphicon">
+										<img src="/Public/Index/css/cw.png" width="24px" height="24px"></i>
+									<span class="nav-label">充值大厅</span>
+									<span class="fa arrow"></span>
+								</a>
+								<ul class="nav nav-second-level collapse">
+									<li><a class="J_menuItem" href="/Home/Transaction/recharge" data-index="8">余额充值</a></li>
+									<li><a class="J_menuItem" href="/Home/Transaction/rechargelist" data-index="9">充值列表</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">
+									<i class="glyphicon">
+										<img src="/Public/Index/css/jy.png" width="24px" height="24px"></i>
+									<span class="nav-label">财务中心</span>
+									<span class="fa arrow"></span>
+								</a>
+								<ul class="nav nav-second-level collapse">
+									<li><a class="J_menuItem" href="/Home/Transaction/balancebd" data-index="14">余额兑换</a></li>
+									<li><a class="J_menuItem" href="/Home/Transaction/bonusbd" data-index="15">奖金兑换</a></li>
+									<div class="hr-line-dashed"></div>
+									<li><a class="J_menuItem" href="/Home/Withdrawals/withdrawals" data-index="8">余额提现</a></li>
+									<li><a class="J_menuItem" href="/Home/Withdrawals/bonuswithdrawals" data-index="8">奖金提现</a></li>
+									<li><a class="J_menuItem" href="/Home/Withdrawals/withdrawalslist" data-index="9">提现列表</a></li>
+									<div class="hr-line-dashed"></div>
+									<li><a class="J_menuItem" href="/Home/Transaction/financelist" data-index="16">财务记录</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#">
+									<i class="glyphicon">
+										<img src="/Public/Index/css/cw.png" width="24px" height="24px"></i>
+									<span class="nav-label">购物中心</span>
+									<span class="fa arrow"></span>
+								</a>
+								<ul class="nav nav-second-level collapse">
+									<li><a class="J_menuItem" href="/Home/Goods/goodslist" data-index="8">购物商城</a></li>
+									<li><a class="J_menuItem" href="/Home/Goods/orderlist" data-index="9">我的订单</a></li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<div class="slimScrollBar" style="width: 4px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 923px; background: rgb(0, 0, 0);"></div>
+					<div class="slimScrollRail" style="width: 4px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.9; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>
+				</div>
+			</nav>

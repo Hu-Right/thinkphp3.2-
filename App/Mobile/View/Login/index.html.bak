@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>会员管理系统</title>
+<link href="/Public/Login/css/style.css" rel="stylesheet" type="text/css" media="all" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<!-- -->
+
+<style type="text/css">
+<!--
+.STYLE1 {color: #000000}
+-->
+</style>
+</head>
+<body>
+<!-- contact-form -->	
+<div class="message warning">
+<div class="inset">
+	<div class="login-head">
+		<h1 class="STYLE1"><font color="#6E00A3">会员登录</h1>
+		 <div class="alert-close"> </div> 			
+	</div>
+		<form  action="" method="post">
+			<li>
+				<input type="text" class="text" value="请输入会员ID" name="email" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '请输入会员ID';}"><a href="#" class=" icon user"></a>
+			</li>
+				<div class="clear"> </div>
+			<li>
+				<input type="password" value="" name="password"> <a href="#" class="icon lock"></a>
+			</li>
+			<div class="clear"> </div>
+			<div class="submit">
+				<input type="submit" onClick="myFunction()" value="确认登录" >
+				<h4><a href="#">我还没有帐号?</a></h4>
+						  <div class="clear">  </div>	
+			</div>
+				
+		</form>
+		</div>					
+	</div>
+	</div>
+	<div class="clear"> </div>
+<!--- footer --->
+<div class="footer">
+	<p>Copyright &copy; 2016-2018.</p>
+</div>
+</body>
+</html>

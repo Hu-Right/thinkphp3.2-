@@ -1,0 +1,93 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a,ul,li{
+    text-decoration: none;
+    list-style: none;
+    color:#000;
+}
+body{
+   font-family: "宋体";
+   background:#e5e5e5;
+}
+
+.centre{
+    width:100%;
+    height:3rem;
+    background:#DE4410;
+    font-size:1.3rem;
+    line-height: 3rem;
+    color:#fff;
+    font-family: "宋体";
+    position: relative;
+    text-align: center;
+}
+.centre a  i{
+    float: left;
+    color:#fff;
+    font-size:1rem;
+    margin-left: 0.2rem;  
+}
+.centre p{
+    margin-right: 3rem;
+}
+.img {
+    width:100%;
+    height:10rem;
+    background:red;
+}
+.img img{
+    width:100%;
+    height:10rem;
+}
+.get-list{
+    width:100%;
+
+    margin-top: 1rem;
+} 
+.get-list .date{
+    width:90%;
+    height:3rem;
+    margin: auto;
+    color:#D55B2C;
+    line-height: 3rem;
+    font-size:1.3rem;
+    background:#F1F3C4;
+}
+.get-list .get{
+    width:90%;
+    height:3rem;
+    margin: auto;
+    color:#686868;
+    line-height: 3rem;
+    background:#FFFFFF;
+    border-bottom: 1px solid #F3F3F3;
+}
+.get-list .click{
+    border-bottom:none;
+}
+.get-list .get p{
+    float: left;
+    margin-left: 1rem;
+}
+.get-list .get button{
+    width:4.5rem;
+    height:1.5rem;
+    float: right;
+    color:#FDDAD4;
+    margin: 0.7rem 1.5rem 0 0;
+    background:#EF1413;
+    border:none;
+    outline: none;
+    border-radius: 0.5rem;
+}
+.text{
+    width:85%;
+    height:8rem;
+    margin: 1rem auto;
+    color:#727274;
+}
+.text span{
+    font-size:0.4rem;
+}

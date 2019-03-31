@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>奖金转换激活币</title>
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Public/Index/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Public/Index/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/Public/Index/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/Public/Index/css/animate.min.css" rel="stylesheet">
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+
+</head>
+<style>
+.red{
+    color: #f10214;
+    margin-top: 5px;
+}
+</style>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><a style="color:#00bb9c;margin-right:5px;" href="">现金积分转换激活币</a>
+                        </h5>
+                        <div class="ibox-tools">
+                           
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" action="" class="form-horizontal" id="form-admin-add" >
+                            
+                   
+                            
+                             <div class="form-group">
+                                <label class="col-sm-4 control-label">已拥有现金积分</label>
+                                    <div class="col-sm-8" style="margin-top:8px">
+                                        <span style="margin-left:10px; font-weight: bold; color:#07bfa3">可用 {$user.currency}元 </span>
+                                        
+                                    </div>
+                                 </div>
+
+                                  <div class="form-group">
+                                
+
+                                 <div class="form-group">
+                                <label class="col-sm-4 control-label">转换激活币数</label>
+                                    <div class="col-sm-5">
+                                        <input type="text" name="money" id="money" onKeyup="checkMoney()" placeholder="请输入转换激活币的数量" class="form-control">
+                                        <!-- <p class="red">(沙舟红研学币转换共享沙舟红奖励需扣除20%手续费用)</p> -->
+                                    </div>
+
+                                 </div>
+               
+                            <div class="hr-line-dashed"></div>
+                                
+                                    
+                              <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-2" style="text-align: center;">
+                                    <input class="btn btn-primary" type="submit" value="我要转换">
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="/Public/Default/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/Public/Default/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/Public/Default/js/content.min.js?v=1.0.0"></script>
+    <script src="/Public/Default/js/plugins/iCheck/icheck.min.js"></script>
+
+<script type="text/javascript" src="/Public/Default/check/js/jquery.validate.min.js"></script> 
+
+<script type="text/javascript" src="/Public/Default/check/js/messages_zh.min.js"></script> 
+
+
+
+<script type="text/javascript" src="/Public/Default/check/js/validate-methods.js"></script> 
+
+
+
+   
+    
+    
+    <script type="text/javascript">
+    var currency = {$user.currency};
+    $(function(){
+    $("#form-admin-add").validate({
+        rules:{
+            uiUJiner:{
+                required:true,
+            },
+           uZfPwd:{
+                required:true,
+                minlength:6,
+                maxlength:6
+
+            },
+        },
+        onkeyup:false,
+        focusCleanup:true,
+        success:"valid",
+        submitHandler:function(form){
+            $(form).ajaxSubmit();
+            var index = parent.layer.getFrameIndex(window.name);
+            parent.$('.btn-refresh').click();
+            parent.layer.close(index);
+        }
+    });
+});
+
+    function checkMoney(){
+        var money = document.getElementById('money').value;
+
+        var s=money/500;
+        
+        if(money>currency){
+            alert('您的现金积分不足！');
+            document.getElementById('money').value=currency;
+        }
+    }
+</script> 
+    
+    
+</body>
+
+</html>

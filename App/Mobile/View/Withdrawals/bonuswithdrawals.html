@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>提现</title>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="/Public/Mobile/css/page.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mobile.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/iconfont.css"/>
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+	<script src="/Public/Mobile/js/rem.js"></script> 
+	
+
+</head>
+
+<body class="gray-bg">
+<!--header star-->
+		<header class="mui-bar mui-bar1 mui-bar-nav mui-bar-nav1" id="header">
+			<a class="btn" href="javascript:history.go(-1)">
+	            <i class="iconfont icon-fanhui"></i>
+	        </a>
+	        <div class="top-sch-box top-sch-boxtwo top-sch-boxthree flex-col">
+	                      返回
+	        </div>
+	    </header>
+	    <!--header end-->
+		<div class="warp warpthree clearfloat">
+		<div class="h-top h-toptwo clearfloat box-s">
+			<p class="tu"><img src="/Public/Mobile/img/touxiang.png"/></p>
+			<p class="nr">{$user.username}</p>
+		</div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><a style="color:#00bb9c; margin-right:5px;" href="">提现</a></h5>
+                        <div class="ibox-tools">
+                            
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" action="__APP__/Mobile/Withdrawals/bonuswithdrawals" class="form-horizontal" id="form-admin-add" >
+                        
+							<div class="form-hy">
+                                <label class="xm">我的奖金：</label>
+                                    <div class="xm-content">
+                                    <input type="text" value="{$user.bonus}元" id="currency" disabled="">
+                                </div>
+                            	</div>
+								<div class="clear"></div>
+                                <div class="form-hy" style="height: 60px; line-height: 0;justify-content: center; align-items: center;">
+                                <label class="xm">银行名称：</label>
+                                    <div class="xm-content" style="flex-direction: column;justify-content: center;">
+                                    <input type="text" name="mode" value="{$puser.mode}" placeholder="请输入银行名称" style="margin-bottom: 15px;">
+                                    <p style="color: #f23030;font-size: 0.343rem;">请输入您的银行名称如：建设银行</p>
+                                </div>
+                            	</div>
+
+                                <div class="clear"></div>
+                                <div class="form-hy" style="height: 60px; line-height: 0;justify-content: center;align-items: center;">
+                                <label class="xm">开户行信息：</label>
+                                    <div class="xm-content" style="flex-direction: column;justify-content: center;">
+                                    <input type="text" name="khhxx" value="{$puser.khhxx}" placeholder="请输入开户行信息" style="margin-bottom: 15px;" >
+                                    <p style="color: #f23030;font-size: 0.343rem;">请输入您的开户行信息</p>
+                                </div>
+                                </div>
+
+                                
+								<div class="clear"></div>
+								<div class="form-hy">
+                                <label class="xm">提现帐号：</label>
+                                    <div class="xm-content">
+                                    <input type="text" name="accounts" placeholder="请输入提现账号" value="{$puser.accounts}">
+                                </div>
+                            	</div>
+								<div class="clear"></div>
+								<div class="form-hy">
+                                <label class="xm">提现姓名：</label>
+                                    <div class="xm-content">
+                                    <input type="text" name="name" placeholder="请输入提现姓名" value="{$user.username}" readonly>
+                                </div>
+                            	</div>
+                                <div class="clear"></div>
+                                <div class="form-hy">
+                                <label class="xm">二级密码：</label>
+                                    <div class="xm-content">
+                                    <input type="password" name="erpsd"  value="" placeholder="请输入二级密码">
+                                </div>
+                                </div>
+								<div class="clear"></div>
+								  <div class="form-hy">
+                                <label class="xm">提现金额：</label>
+                                    <div class="xm-content">
+                                    <input type="number" name="money" id="money" placeholder="请输入提现金额" onKeyup="checkMoney()" value="500">
+                                  
+                                    </div>
+                            	</div>
+                                <div class="clear"></div>
+                                  <div class="form-hy">
+                                <label class="xm">提现手续费：</label>
+                                    <div class="xm-content">
+                                    <input type="number" name="shouxu" id="shouxu" readonly>
+                                  
+                                    </div>
+                                </div>
+								<div class="clear"></div>
+								 					
+								<div class="form-let" style="border-bottom: none;">
+                                <div class="xm">留言：</div>
+                                    <div class="xm-let">
+                                    <textarea name="info" style="margin-bottom: 0;" > </textarea>
+                                    </div>
+                            	</div>
+								 <div class="clear"></div>
+						   
+                            <!-- <div class="form-hy" >
+                                <label class="xm"></label>
+                                    <div class="xm-content">
+                                        <span style="color:#ff0000; font-weight:bold">温馨提示：提现操作将扣除<?php echo C('chongxiao');?>%重消奖，管理费：<?php echo C('guanlifei');?>%，爱心基金：<?php echo C('aixinjijin');?>%</span>
+                                    </div>
+                             </div> -->
+                                <!-- <label class="xm"></label> -->
+                            <div style="padding-top: 10px;">
+                                <span style="color:#ff0000; font-weight:bold">温馨提示：提现操作将扣除{$shouxu}%手续费</span>
+                            </div>
+                            <div class="hr-line"></div>
+                            <div class="button-center">
+                                <div class="col-sm-4 col-sm-offset-2">
+                             <input class="btn btn-primary" type="submit" value="确定我要提现">                                              
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+	<!--footer star-->
+	<footer class="page-footer fixed-footer" id="footer">
+        <ul>
+            <li>
+                <a href="__APP__/Mobile/Index/index">
+                    <i class="iconfont icon-shouye"></i>
+                    <p>首页</p>
+                </a>
+            </li>
+             <li>
+                <a href="__APP__/Mobile/FenHong/index">
+                    <i class="iconfont icon-yaoqingjiangli"></i>
+                    <p>分红</p>
+                </a>
+            </li>
+            <li  class="active">
+                <a href="__APP__/Mobile/Member/center">
+                    <i class="iconfont icon-wode"></i>
+                    <p>我的</p>
+                </a>
+            </li>
+        </ul>
+    </footer>
+		<!--footer end-->
+
+
+    
+</body>
+
+</html>
+<script src="/Public/Index/css/js/jquery-1.8.2.min.js"></script>
+<script>
+    $(function(){
+        checkMoney();
+    });
+    function checkMoney(){
+    
+    var money = document.getElementById('money').value;
+    
+    if(money<=0){
+      alert('提现金额需大于等于500!');
+    }else{
+        $.ajax({
+        url:'{:U("Home/Withdrawals/ajax_checkMoney")}',
+        type:'post',
+        data:'money='+money,
+        dataType:'html',
+      success:function(data){
+          if(data!=0){
+            $("#shouxu").val(data);
+          }
+        }
+      });
+    }
+    
+  }
+</script>

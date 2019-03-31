@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<meta name="renderer" content="webkit">
+
+<title></title>
+
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/pintuer.css">
+
+<link rel="stylesheet" href="__PUBLIC__/Admin/css/admin.css">
+
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_560827_0c4kkx1py8yf1or.css">
+<script src="__PUBLIC__/Admin/js/jquery.js"></script>
+
+<script src="__PUBLIC__/Admin/js/pintuer.js"></script>
+
+</head>
+
+<body>
+
+<div class="panel admin-panel">
+
+  <div class="panel-head" id="add"><strong><span class="iconfont icon-icon-tianjia"></span>修改</strong></div>
+
+  <div class="body-content">
+
+    <form method="post" class="form-x" action="__SELF__">  
+
+	
+
+	<input type="hidden" name="id" value="{$data.id}">
+
+		
+
+	<div class="form-group">
+
+		<div class="label">
+
+			<label>上级权限：</label>
+
+		</div>
+
+		<div class="field">
+
+
+
+			<select name="parent_id" class="input w50">
+
+				<option value="0">超级管理员</option>
+
+					<?php foreach($datas as $v):?>
+
+						<?php if($v['id'] !=$data['id'] ):?>
+
+
+
+					<option <?php if($data['parent_id']==$v['id']):;?>selected<?php endif;?> value="<?php echo $v['id']?>" ><?php echo str_repeat("-",$v['leve']*5);?><?php echo $v['pri_name']?></option>
+
+						<?php endif;?>
+
+					<?php endforeach;?>
+
+			</select>
+
+
+
+			<div class="tips"></div>
+
+		</div>
+
+	</div>
+
+
+
+
+
+		<div class="form-group">
+
+		<div class="label">
+
+			<label>权限名称：</label>
+
+		</div>
+
+		<div class="field">
+
+			<input type="text" class="input w50" value="{$data.pri_name}" name="pri_name" data-validate="required:请输入权限名称" />
+
+			<div class="tips"></div>
+
+		</div>
+
+	</div>
+
+ 									<div class="form-group">
+
+		<div class="label">
+
+			<label>模块名称：</label>
+
+		</div>
+
+		<div class="field">
+
+			<input type="text" class="input w50" value="{$data.module_name}" name="module_name" data-validate="required:请输入模块名称" />
+
+			<div class="tips"></div>
+
+		</div>
+
+	</div>
+
+ 									<div class="form-group">
+
+		<div class="label">
+
+			<label>控制器名称：</label>
+
+		</div>
+
+		<div class="field">
+
+			<input type="text" class="input w50" value="{$data.controller_name}" name="controller_name" data-validate="required:请输入控制器名称" />
+
+			<div class="tips"></div>
+
+		</div>
+
+	</div>
+
+ 									<div class="form-group">
+
+		<div class="label">
+
+			<label>方法名称：</label>
+
+		</div>
+
+		<div class="field">
+
+			<input type="text" class="input w50" value="{$data.action_name}" name="action_name" data-validate="required:请输入方法名称" />
+
+			<div class="tips"></div>
+
+		</div>
+
+	</div>
+
+ 									
+
+ 	      <div class="form-group">
+
+        <div class="label">
+
+          <label></label>
+
+        </div>
+
+        <div class="field">
+
+          <button class="button bg-main icon-check-square-o" type="submit"> 确认添加</button>
+
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+
+</body></html>

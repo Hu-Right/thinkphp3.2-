@@ -1,0 +1,204 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a,ul,li{
+    text-decoration: none;
+    list-style: none;
+    color:#000;
+}
+body{
+   font-family: "宋体";
+   background:#e5e5e5;
+}
+.head{
+    width:100%;
+    height:3rem;
+    background:#DE4410;
+    font-size:1.3rem;
+    line-height: 3rem;
+    color:#FCDCCD;
+    position: fixed;
+    top:0;left:0;
+    z-index: 999;
+}
+.head a  i{
+    float: left;
+    color:#FCDCCD;
+    font-size:1rem;
+    margin-left: 0.2rem; 
+}
+.head p{
+    text-align: center;
+    margin-right: 3rem;
+}
+
+.user{
+    width:100%;
+    height:14rem;
+    padding-top: 1rem;
+    background:#E5E5E5;
+    margin-top: 3rem;
+}
+.user .herda{
+    width:5rem;
+    height:5rem;
+    border-radius: 50%;
+    margin: auto; 
+
+}
+.user .herda img{
+    width:5rem;
+    height:5rem;
+    border-radius: 50%;
+}
+.user .hui button{
+    color:#FEE2E0;
+    float: right;
+    position: absolute;
+    top:5rem;
+    right: 2rem;
+    background: red;
+    border:none;
+    outline: none;
+    border-radius: 0.2rem;
+}
+.user .text{
+    width:100%;
+    height:3.5rem;
+    color:#DB6229;
+    text-align: center;
+    margin-top: 0.8rem;
+  
+}
+.user .text p{
+    display: block;
+    height:2rem;
+}
+.user .text span{
+    font-size:1rem;
+}
+.user .text .psp{
+    line-height: 2rem;
+}
+.user .left{
+    width:11rem;
+    height:1.5rem;
+    margin: auto;
+    color:#D2673F;
+    font-size:1rem;
+    line-height: 1.5rem;
+    text-align: center;
+}
+.user .left input{
+    font-size:0.8rem;
+}
+
+.user .btn{
+    width:4.2rem;
+    height:1.4rem;
+    margin: auto;
+    margin-top: 0.4rem;
+}
+.user .btn button{
+    width:4.2rem;
+    height:1.3rem;
+    color:#fff;
+    border:none;
+    outline: none;
+    border-radius: 0.4rem;
+    background:#DE4410;
+    margin-top: 0.5rem;
+}
+
+
+.list{
+    width:85%;
+    height:4rem;
+    background:#fff;
+    margin: auto;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    border-radius: 0.4rem;
+}
+.list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+ .list ul li{
+        width:6rem;
+        height:4rem;
+        float: left;
+        margin-top: 0.5rem;
+}
+.list ul li span{
+        width:6rem;
+        height:4rem;
+        float: left;
+        margin-top: 0.5rem;
+}
+
+.listbox{
+    width:85%;
+    height:13.4rem;
+    margin:0 auto 3.5rem ;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.listbox .box-bi{
+        width:33%;
+        height:6.5rem;
+        background: #fff;
+        float: left;
+    }
+.listbox .box-bi a i{
+    font-size:2rem;   
+}
+.listbox .box-bi a{
+    margin-top: 1rem;
+    line-height: 3rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.listbox .box-bi a p{
+    color:#292929;
+    margin-top: -1rem;
+    font-size:1rem;
+}
+
+
+
+/*底部fonter*/
+.fonter{
+    width:100%;
+    height:3.5rem;
+    background:#fff ;
+    position: fixed;
+    bottom:0;left:0;
+    z-index: 999;
+}
+.fonter ul{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around; 
+}
+.fonter ul li{
+    width:5rem;
+    height:3rem;
+    float: left;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+.fonter ul li i{
+    color:#E35500;
+    font-size:1.3rem; 
+}
+.fonter ul li a p{
+    font-size:1rem;
+    color:#e35500;
+}

@@ -1,0 +1,75 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a,ul,li{
+    text-decoration: none;
+    list-style: none;
+    color:#000;
+}
+body{
+   font-family: "宋体";
+   background:#FFFFFF;
+   
+}
+.head{
+    width:100%;
+    height:3rem;
+    background:#DE4410;
+    font-size:1.3rem;
+    line-height: 3rem;
+    color:#FCDCCD;
+    position: fixed;
+    top:0;left:0;
+    z-index: 999;
+
+}
+.head a  i{
+    float: left;
+    color:#FCDCCD;
+    font-size:1rem;
+    margin-left: 0.2rem; 
+}
+.head p{
+    text-align: center;
+    margin-right: 1.5rem;
+}
+.service {
+    width:100%;
+    height:18rem;
+    color:#F14E1D;
+    margin-top:5rem; 
+    font-size:1.3rem;
+    text-align: center;
+}
+.service #code img{
+    width:10rem;
+    height:10rem;
+}
+.service span{
+    font-size:0.9rem;
+}
+.service #code{
+    width:10rem;
+    height:10rem;
+    margin:1.5rem auto ;
+}
+.serv {
+    width:100%;
+    height:15rem;
+    color:#F14E1D;
+    font-size:1.3rem;
+    text-align: center;
+}
+.serv #codeic img{
+    width:10rem;
+    height:10rem;
+}
+.serv #codeic{
+    width:10rem;
+    height:10rem;
+    margin:1.5rem auto;
+}
+.serv span{
+    font-size:0.9rem;
+}

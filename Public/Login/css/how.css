@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a,ul,li{
+    text-decoration: none;
+    list-style: none;
+    color:#000;
+}
+body{
+   font-family: "宋体";
+   background:#ffffff;
+}
+.hend{
+    width:100%;
+    height:3rem;
+    background:#DE4410;
+    font-size:1.3rem;
+    line-height: 3rem;
+    color:#FCDCCD;
+    position: fixed;
+    top:0;left:0;
+    z-index: 999;
+}
+.hend a  i{
+    float: left;
+    color:#FCDCCD;
+    font-size:1rem;
+    margin-left: 0.2rem; 
+}
+.hend p{
+    text-align: center;
+    margin-right: 1.5rem;
+}
+
+.top{
+    width:80%;
+    height:2.5rem;
+    margin: auto;
+    margin:  auto;
+}
+.top img{
+    width:100%;
+    height:2.5rem;
+}
+.list{
+    width:95%;
+    height:18rem;
+    margin:3rem auto 0;
+}
+.list img{
+    width:100%;
+    height:18rem;
+}
+.bottom{
+    width:97%;
+    height:17rem;
+    margin: auto;
+}
+.bottom img{
+    width:100%;
+    height:17rem;
+}

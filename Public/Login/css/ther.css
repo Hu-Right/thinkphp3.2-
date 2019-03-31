@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0; 
+}
+a,ul,li{
+    text-decoration: none;
+    list-style: none;
+    color:#000;
+}
+body{
+   font-family: "宋体";
+   background:#FFFFFF;
+}
+.head{
+    width:100%;
+    height:3rem;
+    background:#DE4410;
+    font-size:1.3rem;
+    line-height: 3rem;
+    color:#FCDCCD;
+    position: relative;
+    text-align: center;
+    position: fixed;
+    top:0;left:0;
+    z-index: 999;
+}
+.head a  i{
+    float: left;
+    color:#FCDCCD;
+    font-size:1rem;
+    margin-left: 0.2rem;  
+}
+.head p{
+    margin-right: 3rem;
+    
+}
+.kai{
+    width:100%;
+    height:3rem;
+    color:#DE4410;
+    text-align: center;
+    font-size: 1.3rem;
+    line-height: 3rem;
+    margin-top: 3rem;
+}
+.img{
+    width:100%;
+    height:12rem;
+}
+.img img{
+    width:100%;
+    height:12rem;
+}

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>{$goods.goods_name}</title>
+   <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="/Public/Mobile/css/page.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mobile.css"/>
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/iconfont.css"/>
+	<script src="/Public/Mobile/js/rem.js"></script> 
+	<style>
+                  .myselect select{
+                    border:1px solid rgba(0, 0, 0, .2) !important;
+                    width:15%;
+                  }
+                  </style>
+
+</head>
+
+<body class="gray-bg">
+	<!--header star-->
+		<header class="mui-bar mui-bar1 mui-bar-nav mui-bar-nav1" id="header">
+			<a class="btn" href="javascript:history.go(-1)">
+	            <i class="iconfont icon-fanhui"></i>
+	        </a>
+	        <div class="top-sch-box top-sch-boxtwo top-sch-boxthree flex-col">
+	                      返回
+	        </div>
+	    </header>
+	    <!--header end-->
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title" style="margin-top:40px;">
+                        <h5><a style="color:#00bb9c;" href="">{$goods.goods_name}</a></h5>
+                        <div class="ibox-tools">
+                            
+                        </div>
+                    </div>
+                    <div class="ibox-content" style="height: 730px;">
+					<div style="margin: 8px 8px 8px 0;border-radius: 5px;">
+							<img src="{$goods.logo}"  style=" width: 280px; height: 280px;border-radius: 5px;">
+						</div>
+ <style>
+/* .form-hy{height:40px;margin-bottom: 10px;border-bottom:1px solid #eee;line-height: 40px;}
+.xm-content input{border:none;height: 30px;line-height: 30px;margin-bottom:0;}
+.check_box input{height: auto;}*/
+ </style>					
+						<form method="post" action="" class="form-horizontal" id="form-admin-add">
+						 <input type="text" class="form-control" name="goods_id" value="{$goods.id}" style="display:none">
+               <div class="form-hy">
+                    <label class="xm">产品名称：</label>
+                    <div class="xm-content">
+                        <input type="text"  value="{$goods.goods_name}" disabled="">
+                    </div>
+                </div>
+              <if condition="$spec!=null">
+                    <div style="border-bottom: 1px solid #eee;padding-top: 10px;box-sizing: border-box;height: 40px;" class="myselect">
+                      <span>规格：</span>
+                      <select id="size" style="margin-right: 0.857rem;margin-left: 2.343rem;" name="size">
+                        <option value="0">请选择</option>
+                        <volist name="spec" id="v">
+                         
+                          <option value="{$v['size']}">{$v['size']}</option>
+                        </volist>  
+                      </select>
+                   
+                       <span>颜色：</span><select id="color" name="color">
+                        <option value="0">请选择</option>
+                        <volist name="spec" id="v">
+                         
+                          <option value="{$v['color']}">{$v['color']}</option>
+                        </volist>  
+                      </select>
+                    </div>
+                     <div class="form-hy">
+                                <label class="xm">产品价格：</label>
+                                <div class="xm-content">
+                                    <input type="text"  name="goods_money" id="goods_money" readonly="readonly" value="">
+                                </div>
+                                
+                            </div>
+                    <else/>
+                       <div class="form-hy">
+                                <label class="xm">产品价格：</label>
+                                <div class="xm-content">
+                                    <input type="text" value="{$goods.shop_price}" disabled="">
+                                </div>
+                            </div>
+                 </if>   
+                <div class="form-hy">
+                  <label class="xm">收件人姓名</label>
+                      <div class="xm-content">
+                      <input type="text"  name="name" value="{$user_address['name']}">
+                  </div>
+                </div>
+                <div class="form-hy">
+                  <label class="xm">收货地址：</label>
+                      <div class="xm-content">
+                      <input type="text" name="address" value="{$user_address['address']}" placeholder="请输入地址">
+                  </div>
+                </div>    
+                <div class="form-hy">
+                  <label class="xm">联系电话：</label>
+                      <div class="xm-content">
+                       <input type="text"  name="mobile" value="{$user_address['mobile']}" placeholder="请输入电话">
+                  </div>
+                </div>
+                <div class="form-hy check_box">
+                  <label class="xm">支付类型</label>
+                      <div class="xm-content">
+                             <label class="checkbox-inline">
+                                  <input type="radio" checked value="1" name="payment" > 购物币
+                                  <input type="radio" value="2" name="payment" > 余额
+                                  <input type="radio" value="3" name="payment" > 重消积分
+                              </label>
+                              
+                      </div>
+                  </div>
+                            
+                  <div class="hr-line"></div>
+                  <div class="button-center buy-button">
+                    <div class="col-sm-8 col-sm-offset-2">
+                        <input class="btn btn-primary" type="submit" value="立即购买">
+                    </div>  
+                  </div>     
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+		<!--footer star-->
+		<footer class="page-footer fixed-footer" id="footer">
+      <ul>
+        <li   class="active">
+          <a href="__APP__/Mobile/Index/index">
+            <i class="iconfont icon-shouye"></i>
+            <p>首页</p>
+          </a>
+        </li>
+         <li>
+          <a href="__APP__/Mobile/FenHong/index">
+            <i class="iconfont icon-yaoqingjiangli"></i>
+            <p>分红</p>
+          </a>
+        </li>
+        <li>
+          <a href="__APP__/Mobile/Member/center">
+            <i class="iconfont icon-wode"></i>
+            <p>我的</p>
+          </a>
+        </li>
+      </ul>
+    </footer>
+		<!--footer end-->
+
+    <script>
+        $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+    </script>
+    
+    <script type="text/javascript">
+	$(function(){
+	$("#form-admin-add").validate({
+		rules:{
+			uiUJiner:{
+				required:true,
+			},
+           uZfPwd:{
+                required:true,
+                minlength:6,
+                maxlength:6
+
+            },
+		}, 
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+});
+</script> 
+  
+  <script src="/Public/Default/dist/wan-spinner.js"></script> 
+  <script>
+  $(document).ready(function() {
+    var options = {
+      maxValue: 8000,
+      minValue: 500,
+      step: 500,
+      inputWidth: 150,
+      start: 0,
+      plusClick: function(val) {
+        console.log(val);
+      },
+      minusClick: function(val) {
+        console.log(val);
+      },
+      exceptionFun: function(val) {
+        console.log("excep: " + val);
+      },
+      valueChanged: function(val) {
+        console.log('change: ' + val);
+      }
+    }
+    $(".wan-spinner-1").WanSpinner(options);
+
+  });
+  </script>   
+     <script src="/Public/Index/css/js/jquery-1.8.2.min.js"></script>
+  <script type="text/javascript">
+    $(function(){ 
+     
+  　
+
+    　$("#size").change(function(){ 
+  　　　　var size= $(this).val();
+          var color= $('#color').val();
+          price();
+  　　}); 
+
+
+    $("#color").change(function(){ 
+          var size= $('#size').val();
+  　　　　var color= $(this).val();
+          if(color==0){
+              alert('请选择颜色~');
+          }
+          if(size==0){
+              alert('请选择规格~');
+          }
+          price();
+  　　}); 
+    function price(){
+      var size= $('#size').val();
+  　　var color= $('#color').val();
+      
+      var arr=<?php echo json_encode($spec);?>;  
+      var aarr=eval(arr);  
+      for(i=0;i<aarr.length;i++){  
+          if(aarr[i]['size']==size && aarr[i]['color']==color){  
+             var goods_money=aarr[i]['goods_money'];  
+             $('#goods_money').val(goods_money);
+          } 
+      }  
+    }
+    
+
+}); 
+  </script>  
+</body>
+
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>首页</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <script src="/Public/Mobile/js/rem.js"></script> 
+    <script src="/Public/Mobile/js/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/page.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/loaders.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/loading.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mobile.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/iconfont.css"/>
+    <!-- <link rel="stylesheet" href="//at.alicdn.com/t/font_558351_h91sn7azl7ue4s4i.css"> -->
+
+<script type="text/javascript">
+	$(window).load(function(){
+		$(".loading").addClass("loader-chanage")
+		$(".loading").fadeOut(300)
+	})
+</script>
+</head>
+<!--loading页开始-->
+<div class="loading">
+	<div class="loader">
+        <div class="loader-inner pacman">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+	</div>
+</div>
+<!--loading页结束-->
+	<body>		
+		<!--header star-->
+		<header class="mui-bar mui-bar-nav" id="header">
+			<a href="#">
+	            <!-- <i class="iconfont icon-iconfontcaidan"></i> -->
+	           <img src="/Public/Mobile/img/head.png" alt="" style="width: 1.714rem;margin-top: 5px;">
+	        </a>
+	        <div class="top-sch-box flex-col">
+	            <div class="centerflex">
+	                <i class="fdj iconfont icon-sousuo"></i>
+	                <input type="text" name="" id="" value="" class="sch-txt" placeholder="输入您要搜索的商品" />
+	            </div>
+	        </div>
+	        <a class="btn" href="#">
+	            <i class="iconfont icon-erweima"></i>
+	        </a>
+	    </header>
+	    <!--header end-->
+	    
+	    <!-- 侧边导航 -->
+		<!-- <div class="slide-mask"></div>
+		<aside class="slide-wrapper">
+		  <div>
+			<ul>
+			  <li><a href="list.html">家居家纺</a></li>
+			  <li><a href="list.html">3C数码</a></li>
+			  <li><a href="list.html">家用电器</a></li>
+			  <li><a href="list.html">厨房小电</a></li>
+			  <li><a href="list.html">零食小吃</a></li>
+			  <li><a href="list.html">酒水饮料</a></li>
+			  <li><a href="list.html">个护健康</a></li>
+			  <li><a href="list.html">生活电器</a></li>
+			  <li><a href="list.html">服饰</a></li>
+			  <li><a href="list.html">五金家装</a></li>
+			</ul>
+		  </div>
+		</aside> -->
+	    <input type="text" name="psd" value="{$psd}" id="psd" style="display: none">
+		<div id="main" class="clearfloat warp">			
+		    <div class="mui-content">
+				<!--banner开始-->
+				<div class="banner swiper-container">
+		            <div class="swiper-wrapper">
+		                <div class="swiper-slide"><a href="javascript:void(0)"><img class="swiper-lazy" data-src="/Public/Mobile/upload/banner.jpg" alt=""></a></div>
+		                <div class="swiper-slide"><a href="javascript:void(0)"><img class="swiper-lazy" data-src="/Public/Mobile/upload/banner2.jpg" alt=""></a></div>
+		                <div class="swiper-slide"><a href="javascript:void(0)"><img class="swiper-lazy" data-src="/Public/Mobile/upload/banner3.jpg" alt=""></a></div>
+		                <div class="swiper-slide"><a href="javascript:void(0)"><img class="swiper-lazy" data-src="/Public/Mobile/upload/banner4.jpg" alt=""></a></div>
+		            </div>
+		        </div>
+		        <!--banner结束-->
+                <!-- 公告开始 -->
+                <style type="text/css">
+                   .publicknow{
+                   	background: #fff;
+                   	height: 40px;
+                   	line-height: 40px;
+                   	font-size: 0.35rem;
+                   	padding: 0 10px;
+
+                   }
+                   .publicknow p{color: #000;width:20%;}
+                   .publicknow div{width: 80%;}
+                   .publicknow a{
+                   	color:#8f8f94;
+                   	width: 100%;
+                   	display: block;
+                   }
+
+                </style>
+                <div class="publicknow clearfloat box-s">
+		        	<p class="learfloat fl">利民公告：</p>
+		        	<div class="fl clearfloat">
+					<a href="/index.php/Mobile/Transaction/announcement">点击查看公告详情>></a>							
+					</div>		
+		        </div>
+                <!-- 公告结束 -->
+		        <!-- 商品分类开始 -->
+			    <div class="wrapper wrapper03" id="wrapper03">
+				    <div class="scroller">
+				        <ul class="clearfix">
+				        	<volist name="category" id="v">
+				            	<li><a href="javascript:void(0)">{$v['cg_name']}</a></li>
+				            </volist>
+				        </ul>
+				    </div>
+				</div>
+				<div class="goods_list">
+				  <volist name="category" id="v">
+				    <div class="">
+					  <ul>
+				        <volist name="v.goods" id="vo">
+		        		<li class="list clearfloat fl">
+		        			<a href="/index.php/Mobile/Goods/show/id/{$vo.id}">
+			        			<div class="gd_img clearfloat">
+			        				<img src="{$vo.logo}"/>
+			        			</div>
+			        			<div class="gd_txt">
+			        				<p class="product_text">{$vo.goods_name}</p>
+			        				<p class="shop_price"><span>¥{$vo.shop_price}</span></p>
+                                    <p class="shop_info">
+                                    <span class="score_num">{$vo.integral}积分</span>
+                                    <span class="have_num">库存:{$vo.amount}</span>
+                                    </p>
+			        			</div>
+		        			</a>
+		        		</li>
+		        	    </volist>	
+				      </ul>
+				    </div>
+				    </volist>
+				</div>
+		        <!--滚动公告开始-->
+		        <!-- <div class="notice clearfloat box-s">
+		        	<p class="tit clearfloat fl">利民公告：</p>
+		        	<div class="left fl clearfloat box-s">
+						<div class="slider autoplay">
+							<div>这里是新闻资讯内容可以手滑滚动</div>
+							<div>这里是新闻资讯内容可以手滑滚动</div>
+							<div>这里是新闻资讯内容可以手滑滚动</div>
+							<div>这里是新闻资讯内容可以手滑滚动</div>
+							<div>这里是新闻资讯内容可以手滑滚动</div>
+							<div>这里是新闻资讯内容可以手滑滚动</div>
+						</div>							
+					</div>		
+					<a href="#" class="nmore clearfloat fr">更多</a>
+		        </div> -->
+		        <!--滚动公告结束-->
+		        
+		        
+		        
+		        <!--like star-->
+<!-- 		        <div class="like clearfloat box-s">
+		        	<div class="boutit clearfloat">
+		        		<span></span>
+		        		<samp>猜你喜欢</samp>
+		        	</div>
+					
+		        	<div class="content clearfloat">
+					<volist name="list" id="vo">
+		        		<div class="list clearfloat fl">
+		        			<a href="/index.php/Mobile/Goods/show/id/{$vo.id}">
+			        			<div class="tu clearfloat">
+			        				<img src="{$vo.logo}"/>
+			        			</div>
+			        			<div class="bottom clearfloat box-s">
+			        				<p class="over">{$vo.goods_name}</p>
+			        				<span>¥{$vo.shop_price}</span>
+			        			</div>
+		        			</a>
+		        		</div>
+						
+		        	</volist>	
+		        	</div>
+		        </div> -->
+		        <!--like end-->
+	        </div>
+	        </div>
+		<!--footer star-->	    
+		<!--footer star-->
+		<footer class="page-footer fixed-footer" id="footer">
+			<ul>
+				<li  class="active">
+					<a href="__APP__/Mobile/Index/index">
+						<i class="iconfont icon-shouye"></i>
+						<p>首页</p>
+					</a>
+				</li>
+				 <li>
+					<a href="__APP__/Mobile/FenHong/index">
+						<i class="iconfont icon-yaoqingjiangli"></i>
+						<p>分红</p>
+					</a>
+				</li>
+				<!-- <li>
+					<a href="__APP__/Mobile/Goods/goodslist">
+						<i class="iconfont icon-icon04"></i>
+						<p>商城分类</p>
+					</a>
+				</li> -->
+
+				<!-- <li>
+					<a href="__APP__/Mobile/Goods/goodslist">
+						<i class="iconfont icon-gouwuche"></i>
+						<p>购物车</p>
+					</a>
+				</li> -->
+
+				<li>
+					<a href="__APP__/Mobile/Member/center">
+						<i class="iconfont icon-wode"></i>
+						<p>我的</p>
+					</a>
+				</li>
+			</ul>
+		</footer>
+		<!--footer end-->
+		<script type="text/javascript" src="/Public/Mobile/js/jquery-1.8.3.min.js" ></script>
+		<script type="text/javascript" src="/Public/Mobile/js/navbarscroll.js"></script>
+		<script type="text/javascript" src="/Public/Mobile/js/iscroll.min.js"></script>
+		<script src="/Public/Mobile/js/others.js"></script>
+		<script type="text/javascript" src="/Public/Mobile/js/hmt.js" ></script>
+		<script src="/Public/Mobile/slick/slick.js" type="text/javascript" ></script>
+		<!--插件-->
+		<link rel="stylesheet" href="/Public/Mobile/css/swiper.min.css">
+		<script src="/Public/Mobile/js/swiper.jquery.min.js"></script>
+		<!--新闻资讯滚动-->
+		<script type="text/javascript">
+			// window.onload=function(){
+			// 	var psd=document.getElementById("psd").value;
+			// 	if(psd == "111111"){
+			// 		alert("请及时更改您的登录密码以及二级密码");
+			// 	}
+			// }
+		    $(function(){
+            // 轮播图
+            $('.autoplay').slick({
+			  slidesToShow: 1,
+			  slidesToScroll: 1,
+			  autoplay: true,
+			  autoplaySpeed: 2000,
+			});
+             // 滚动
+		    $('.wrapper').navbarscroll();
+
+            // 选项卡
+            $(".goods_list>div:first-child").addClass("show_me");
+		    $(".scroller>ul>li").click(function(){
+			var n=$(".scroller>ul>li").index($(this));
+			$(".goods_list>div").removeClass("show_me");		
+			$(".goods_list>div").eq(n).addClass("show_me");		
+		});
+
+		    });
+           
+
+
+		    function getGoods($id){
+		    	window.location="__APP__/Mobile/Index/index/cate_id/"+$id;
+		    }
+		</script>
+		
+	</body>
+
+</html>

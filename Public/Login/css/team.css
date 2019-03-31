@@ -1,0 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a,ul,li{
+    text-decoration: none;
+    list-style: none;
+    color:#000;
+}
+body{
+   
+   background:#F4F4F4;
+}
+
+.head{
+    width:100%;
+    height:1rem;
+    background:#DE4410;
+    font-size:0.4rem;
+    line-height: 1rem;
+    color:#FCDCCD;
+    position: fixed;
+    top:0;left:0;
+    z-index: 999;
+}
+.head a  i{
+    float: left;
+    color:#FCDCCD;
+    font-size:0.3rem;
+    margin-left: 0.2rem; 
+}
+.head p{
+    text-align: center;
+    margin-right: 0.2rem;
+}
+.list{
+    width:100%;
+    margin-top: 1rem;
+}
+/*.jibie{
+    width:100%;
+    height:1rem;
+    line-height: 1rem;
+    background:#fff;
+    border-bottom: 1px solid #F8F8F8;
+} 
+.jibie ul{
+    float: left;
+    width:100%;
+}
+.jibie ul li{
+    font-size:0.3rem;
+    padding-left: 0.5rem;
+    float: left;
+}
+.jibie ul li i{
+    color:#DE4410;
+    font-size:0.3rem;
+}
+.jibie ul li.right{
+    float: right;
+    font-size:0.3rem;
+    color:#E3E3E3;
+    margin-right: 0.1rem;
+}
+.jibie ul li.text{
+   width:18%;
+}
+.jibie ul li.red{
+    width:20%;
+    color:red;
+    text-align: center;
+}*/
+
+.list table{
+    width:100%;
+}
+.list table tr td{
+  font-size:0.3rem;
+ height:1rem;
+  text-align: center;
+}
+.list table tr td i{
+    font-size:0.3rem;
+}
+    
+
+

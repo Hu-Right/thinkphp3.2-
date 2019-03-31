@@ -1,0 +1,107 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a,ul,li{
+    text-decoration: none;
+    list-style: none;
+    color:#000;
+}
+body{
+   font-family: "宋体";
+   background:#e5e5e5;
+}
+
+.head{
+    width:100%;
+    height:3rem;
+    background:#DE4410;
+    font-size:1.3rem;
+    line-height: 3rem;
+    color:#FCDCCD;
+    font-family: "宋体";
+    position: fixed;
+    top:0;left:0;
+    z-index: 999;
+}
+
+ .head a  i{
+    float: left;
+    color:#FCDCCD;
+    font-size:1rem;
+    margin-left: 0.2rem; 
+    
+}
+ .head p{
+    text-align: center;
+    margin-right: 2.5rem;
+}
+ .head  .right{
+    color:#FEE1C4;
+    position: absolute;
+    top:0;
+    font-size:1rem;
+    right: 2rem;
+    font-family: "宋体";
+}
+.sum{
+    width:100%;
+    height:6rem;
+    color:#F5C8B6;
+    text-align: center;
+    line-height: 5rem;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+    background:#E35000;
+}
+.bank-te{
+    width:100%;
+    height:4rem;
+    background:#fff;
+    font-size: 0.7rem;
+    text-align: center;
+}
+.bank-te .pp{
+    margin-top: 1rem;
+}
+.bank-te .bank-list{
+    width:85%;
+    height:4rem;
+    color:#646464;
+    margin: auto;
+    line-height: 4rem;
+    border-bottom:1px solid #F1F1F1;
+}
+.bank-te .bank-list span{
+    font-size:1rem;
+    float: left;
+}
+.bank-te .bank-list input{
+    width:7rem;
+    color:#DE4410;
+    border:none;
+    outline: none;
+    height:2rem;
+    font-size: 1rem;
+}
+.bank-te .bank-list p {
+    float: right; 
+     font-size:1rem;
+}
+
+.button{
+    width:100%;
+    height: 3rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+.button button{
+    width:14rem;
+    color:#F5C8B6;
+    height:2.3rem;
+    border:none;
+    outline: none;
+    font-size:1rem;
+    border-radius: 8px;
+    background:#DD440E;
+}

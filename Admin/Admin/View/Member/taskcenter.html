@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/pintuer.css">
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/admin.css">
+    <script src="__PUBLIC__/Admin/js/jquery.js"></script>
+    <script src="__PUBLIC__/Admin/js/pintuer.js"></script>
+  </head>
+  
+  <body>
+    <div class="panel admin-panel">
+      <div class="panel-head">
+        <strong class="iconfont icon-liebiao">任务中心</strong></div>
+        
+        <div class="padding border-bottom">
+
+            <ul class="search">
+    
+              <li>
+    
+                <form method="post" action="">
+    
+                  <button type="button" class="button border-yellow" onclick="window.location.href='__CONTROLLER__/tadds'">
+    
+                    <span class="iconfont icon-tianjia"></span>添加</button>
+    
+                </form>
+    
+              </li>
+    
+            </ul>
+    
+          </div>
+
+        <!-- <a href="__APP__/Admin/Withdrawals/daochu"><strong class="icon-reorder" style="float: right;margin-top: -30px;">导出今日Excel</strong></div></a>
+  <a href="__APP__/Admin/Withdrawals/daochus"><strong class="icon-reorder" style="float: right;margin-right: 150px;margin-top: -30px;">导出本月所有记录</strong></div></a> -->
+      <form method="post" action="__CONTROLLER__/bdels" enctype="multipart/form-data">
+        <table class="table table-hover text-center">
+          <tr>
+            <th width="120">id</th>
+            <th>任务名称</th>
+            <th>文案内容</th>
+            <th>附件图片</th>
+            <th>是否禁用</th>    
+            <th>开始时间</th>
+            <th>操作</th>
+          </tr>
+          <volist name="data" id="v">
+            <tr>
+              <td>
+                <input type="checkbox" name="id[]" value="{$v.id}" />{$v.id}</td>
+              <td>{$v.cname}</td>
+              <td>{$v.content}</td>
+              <td><img style="width: 50px;" src="{$v.logo}" /></td>
+              <td> 
+                  <eq name="v.status" value="1">
+                      是<else/>否
+                  </eq>
+           </td>
+
+                <td>{$v.btime|date="Y-m-d H:i:s",###}</td>
+              <td>
+                <div class="button-group">
+                  <a class="button border-main" href="__CONTROLLER__/tsave/id/{$v['id']}">
+                    <span class="icon-edit"></span>修改</a>
+                  <a class="button border-red" href="__CONTROLLER__/tdel/id/{$v['id']}" onclick="return del(1)">
+                    <span class="icon-trash-o"></span>删除</a>
+                </div>
+              </td>
+            </tr>
+          </volist>
+          <tr>
+            <td colspan="8">
+              <div class="pagelist">{$page}</td></tr>
+        </table>
+        </div>
+        <div class="padding border-bottom">
+          <button type="button" class="button border-green" id="checkall">
+            <span class="iconfont icon-htmal5icon22"></span>全选</button>
+          <button type="submit" class="button border-red" onclick="return DelSelect()">
+            <span class="iconfont icon-shanchu"></span>批量删除</button>
+        </div>
+      </form>
+      <script type="text/javascript">function del(id) {
+          if (confirm("您确定要删除吗?")) {
+
+} else {
+            return false;
+          }
+        }
+
+        $("#checkall").click(function() {
+          $("input[name='id[]']").each(function() {
+            if (this.checked) {
+              this.checked = false;
+            } else {
+              this.checked = true;
+            }
+          });
+        })
+
+        function DelSelect() {
+          var Checkbox = false;
+          $("input[name='id[]']").each(function() {
+            if (this.checked == true) {
+              Checkbox = true;
+            }
+          });
+          if (Checkbox) {
+            var t = confirm("您确认要删除选中的内容吗？");
+            if (t == false) return false;
+          } else {
+            alert("请选择您要删除的内容!");
+            return false;
+          }
+        }</script>
+  </body>
+
+</html>

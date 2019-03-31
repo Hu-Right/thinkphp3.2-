@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=no">
+    <title>我的分红记录</title>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="/Public/Mobile/css/page.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mobile.css"/>
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/iconfont.css"/>
+	<script src="/Public/Mobile/js/rem.js"></script> 
+</head>
+
+<body class="gray-bg">
+<!--header star-->
+		<header class="mui-bar mui-bar1 mui-bar-nav mui-bar-nav1" id="header">
+			<a class="btn" href="javascript:history.go(-1)">
+	            <i class="iconfont icon-fanhui"></i>
+	        </a>
+	        <div class="top-sch-box top-sch-boxtwo top-sch-boxthree flex-col">
+	                      返回
+	        </div>
+	    </header>
+	    <!--header end-->
+		<div class="warp warpthree clearfloat">
+		<div class="h-top h-toptwo clearfloat box-s">
+			<p class="tu"><img src="/Public/Mobile/img/touxiang.png"/></p>
+			<p class="nr">{$user.username}</p>
+		</div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><a style="color:#00bb9c;margin-right:5px;" >我的分红记录</a></h5>
+                        <div class="ibox-tools">
+                            
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <table class="table table-striped table-bordered table-hover"  style="width:100%">
+                            
+                            <tbody>
+							<volist name="gain_list" id="vo">
+									<tr><td>财务类型</td><td>{$vo.type}</td></tr>
+                                    <tr><td>收入类型</td><td>{$vo.income}</td></tr>
+                                    <tr><td>总奖金</td><td>{$vo.totalmoney}</td></tr>
+                                    <tr><td>奖金</td><td>{$vo.money}</td></tr>
+                                    <tr><td>重销积分</td><td>{$vo.fuxiao_credit}</td></tr>
+									<tr><td>说明</td><td>业绩分红</td></tr>
+									<!-- <tr>状态：成功</tr><br/> -->
+									<tr><td>记录时间</td><td>{$vo.time}</td></tr>
+									<tr style="height:20px"></tr>
+							</volist>								
+                            </tbody>
+                            
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+			
+			
+			{$page}
+        </div>
+    </div>
+    </div>
+	<!--footer star-->
+		<footer class="page-footer fixed-footer" id="footer">
+			<ul>
+				<li>
+					<a href="__APP__/Mobile/Index/index">
+						<i class="iconfont icon-shouye"></i>
+						<p>首页</p>
+					</a>
+				</li>
+				 <li  class="active">
+					<a href="__APP__/Mobile/FenHong/index">
+						<i class="iconfont icon-yaoqingjiangli"></i>
+						<p>分红</p>
+					</a>
+				</li>
+				<li>
+					<a href="__APP__/Mobile/Member/center">
+						<i class="iconfont icon-wode"></i>
+						<p>我的</p>
+					</a>
+				</li>
+			</ul>
+		</footer>
+		<!--footer end-->
+    
+</body>
+
+</html>

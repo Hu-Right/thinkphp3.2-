@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{$goods.goods_name}</title>
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Public/Index/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Public/Index/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/Public/Index/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/Public/Index/css/animate.min.css" rel="stylesheet">
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><a style="color:#00bb9c; margin-right:5px;" href="">{$goods.goods_name}</a></h5>
+                        <div class="ibox-tools">
+                            
+                        </div>
+                    </div>
+                    <div class="ibox-content" style="height: 800px;">
+					<div style="  width: 350px; float: left;  margin: 8px;   background:#FBEFEF;border-radius: 5px;">
+						<img src="{$goods.logo}"  style=" width: 350px; height: 350px;border-radius: 5px;">
+						</div>
+						<div style="  width: 70%; float: left;    padding: 8px; margin: 8px;    background:#FBEFEF;border-radius: 5px;">
+					
+						<form method="post" action="" class="form-horizontal" id="form-admin-add">
+							<input type="text" class="form-control" name="goods_id" value="{$goods.id}" style="display:none">
+                         <div class="form-group">
+                                <label class="col-sm-2 control-label">产品名称：</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="{$goods.goods_name}" disabled="">
+                                </div>
+                            </div>
+							 <div class="form-group">
+                                <label class="col-sm-2 control-label">产价格：</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="{$goods.shop_price}" disabled="">
+                                </div>
+                            </div>
+							<div class="form-group">
+                                <label class="col-sm-2 control-label">订货数量：</label>
+                                    <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="num" value="">
+                                </div>
+                            </div>
+								
+								<div class="form-group">
+                                <label class="col-sm-2 control-label">收件人姓名：</label>
+                                    <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="name" value="">
+                                </div>
+                            	</div>
+								<div class="form-group">
+                                <label class="col-sm-2 control-label">收货地址：</label>
+                                    <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="address" value="">
+                                </div>
+                            	</div>
+											
+								<div class="form-group">
+                                <label class="col-sm-2 control-label">联系电话：</label>
+                                    <div class="col-sm-10">
+                                     <input type="text" class="form-control" name="mobile" value="">
+                                </div>
+                            	</div>
+								<div class="form-group">
+                                <label class="col-sm-2 control-label">支付类型：</label>
+                                    <div class="col-sm-10">
+                                           
+                                            <label class="checkbox-inline">
+                                                <input type="radio" value="2" name="payment"> 订货币
+                                            </label>
+											  
+                                    </div>
+                                </div>
+								
+								
+                                 <div class="hr-line-dashed"></div>
+                            
+                            <div class="hr-line-dashed" style="margin-top:-10px;"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                            
+                             <input class="btn btn-primary" type="submit" value="立即购买">                                              
+                                </div>
+                            </div>
+                        </form>
+
+</div>
+
+
+
+
+							
+					
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+    </script>
+    
+    <script type="text/javascript">
+	$(function(){
+	$("#form-admin-add").validate({
+		rules:{
+			uiUJiner:{
+				required:true,
+			},
+           uZfPwd:{
+                required:true,
+                minlength:6,
+                maxlength:6
+
+            },
+		}, 
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+});
+</script> 
+  
+  <script src="/Public/Default/dist/wan-spinner.js"></script> 
+  <script>
+  $(document).ready(function() {
+    var options = {
+      maxValue: 8000,
+      minValue: 500,
+      step: 500,
+      inputWidth: 150,
+      start: 0,
+      plusClick: function(val) {
+        console.log(val);
+      },
+      minusClick: function(val) {
+        console.log(val);
+      },
+      exceptionFun: function(val) {
+        console.log("excep: " + val);
+      },
+      valueChanged: function(val) {
+        console.log('change: ' + val);
+      }
+    }
+    $(".wan-spinner-1").WanSpinner(options);
+
+  });
+  </script>   
+    
+</body>
+
+</html>

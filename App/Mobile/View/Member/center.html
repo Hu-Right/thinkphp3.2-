@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>会员中心</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <script src="/Public/Mobile/js/rem.js"></script> 
+    <script src="/Public/Mobile/js/jquery.min.js" type="text/javascript"></script>
+	<link href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/page.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/loaders.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/loading.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/iconfont.css"/>
+    <!-- <link rel="stylesheet" href="//at.alicdn.com/t/font_558351_h91sn7azl7ue4s4i.css"> -->
+<script type="text/javascript">
+	$(window).load(function(){
+		$(".loading").addClass("loader-chanage")
+		$(".loading").fadeOut(300)
+	})
+</script>
+<style>
+.cash .shang ul li {
+    width: 49.5%;
+    float: left;
+    padding: 4% 0;
+    text-align: center;
+    border: 1px solid #e2e2e2;
+    border-bottom: 1px solid #e2e2e2;
+}
+.h-top {
+    width: 100%;
+    background-color: #f23030;
+    padding: 5% 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.h-top .tui img {
+    width: 2.857rem;
+    height: 2.857rem;
+    border-radius: 50%;
+}
+
+.h-top .contents {
+    padding-left: 10px;
+}
+.h-top .contents p{color: #fff;}
+
+.box-s i{font-size: 0.629rem;}
+</style>
+</head>
+	<body>
+		<!--header star-->
+		<header class="mui-bar mui-bar1 mui-bar-nav mui-bar-nav1" id="header">
+			<a class="btn" href="javascript:history.go(-1)">
+	            <i class="iconfont icon-fanhui"></i>
+	        </a>
+	        <div class="top-sch-box top-sch-boxtwo top-sch-boxthree flex-col">返回</div>
+	    </header>
+	    <!--header end-->
+	    
+	    <div class="warp clearfloat">
+	    	<div class="h-top clearfloat box-s">
+	    		<div class="tui">
+	    			<img src="/Public/Mobile/img/touxiang.png"/>
+	    		</div>
+	    		<div class="contents">
+	    			<p class="hname" >{$user.username}</p>
+	    			<p class="htel">{$user.email}</p>
+	    			<!-- <p class="hpthy">{$user['level']==0?'至尊卡会员':''}
+										{$user['level']==1?'绿宝石会员':''}
+										{$user['level']==2?'蓝宝石会员':''}
+										{$user['level']==3?'红宝石会员':''}
+										{$user['level']==4?'钻石会员':''}
+										{$user['level']==5?'金钻石会员':''}
+										{$user['level']==6?'立菲大使会员':''}</p> -->
+	    		</div>
+	    		<!-- <a href="#" class="btn db clearfloat fr ra3">签到</a> -->
+	    	</div>
+	    	<div class="cash clearfloat">
+	    		<div class="shang clearfloat">
+	    			<ul>
+	    				<li>
+	    					<a href="#">
+	    						<p>{$xiao_star}</p>
+	    						<span>本期销售数量</span>
+	    					</a>
+	    				</li> 
+	    				<li>
+	    					<a href="#">
+	    						<p>{$gain_money}</p>
+	    						<span>分红值</span>
+	    					</a>
+	    				</li>
+	    				
+	    			</ul>
+	    		</div>
+	    	</div>
+	    	<div class="four_box">
+	    		<ul>
+	    			<li>
+	    				<a href="__APP__/Mobile/FenHong/yu_log">
+	    					<i class="iconfont icon-zhuanzhang" style="color:#e64c2e;">
+	    					<span>转账记录</span></i>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+	    			<li>
+	    				<a href="__APP__/Mobile/FenHong/liangpeng">
+	    					<i class="iconfont icon-xiaofeijilu" style="color:#2eab7a;">
+	    					<span>量碰奖记录</span></i>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+	    			<li>
+	    				<a href="__APP__/Mobile/FenHong/manage">
+	    					<i class="iconfont icon-caiwudaodan" style="color:#e64c2e;">
+	    					<span>管理奖记录</span></i>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+	    			<li>
+	    				<a href="__APP__/Mobile/FenHong/day_money">
+	    					<i class="iconfont icon-licaijilu" style="color:#00aeef;">
+	    					<span>收益记录</span></i>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+    			
+	    			<li>
+	    				<a href="__APP__/Mobile/Withdrawals/withdrawalslist">
+	    					<i class="iconfont icon-jilu1" style="color:#2ab0e2;">
+	    					<span>奖金提现记录</span></i>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+					<li>
+	    				<a href="__APP__/Mobile/Transaction/financelist">
+	    					<i class="iconfont icon-jilu" style="color:#e64c2e;">
+	    					<span>奖金记录</span></i>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+	    			<li>
+	    				<a href="__APP__/Mobile/FenHong/index">
+	    					<i class="iconfont icon-fenhongjilu" style="color:#FF1493;">
+	    					<span>分红记录</span></i>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+                   <if condition="$user['is_decenter']">
+	    			<li>
+	    				<a href="__APP__/Mobile/FenHong/baodantc">
+	    					<i class="iconfont icon-process" style="color:#2eab7a;">
+	    					<span>我的报单提成</span></i>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+	    			</if>
+	    			<li>
+	    				<a href="__APP__/Mobile/Transaction/zhbonus">
+	    					<i class="iconfont icon-1" style="color:#e7a200;">
+	    					<span>奖金兑换激活币</span></i>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+	    			<li>
+	    				<a href="__APP__/Mobile/Transaction/activate_zz">
+	    					<i class="iconfont icon-zhanghuyue" style="color:#e64c2e;">
+	    					<span>激活币转账</span></i>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+	    			<li>
+	    				<a href="__APP__/Mobile/Transaction/balancebds">
+	    					<i class="iconfont icon-jifen" style="color:#feaa33;">
+	    					<span>现金积分转激活币</span></i>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+	    			<li>
+	    				<a href="__APP__/Mobile/FenHong/xiaofei_credit">
+	    					<i class="iconfont icon-icon" style="color:#FF4500;">
+	    					<span>消费积分</span></i>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+	    		</ul>
+	    	</div>
+
+			<div class="two_box">
+				<ul>
+	    			<li>
+	    				<a href="__APP__/Mobile/Member/team">
+							<i class="iconfont icon-tuandui" style="color:#2eab7a;"></i>
+	    					<span style="font-size:16px;color:#000;">我的团队</span>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+	    			<li>
+	    				<a href="__APP__/Mobile/Member/useradd">
+	    					<i class="iconfont icon-edit" style="color:#ed134b;"></i>
+	    					<span style="font-size:16px;color:#000;">注册会员</span>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+	    			<li>
+	    				<a href="__APP__/Mobile/Member/upgrade">
+	    					<i class="iconfont icon-shengji" style="color:#00aeef;"></i>
+	    					<span style="font-size:16px;color:#000;">自主升级</span>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+	    			<li>
+	    				<a href="__APP__/Mobile/Member/user_activate">
+	    					<i class="iconfont icon-dengdai" style="color:#FF4500;"></i>
+	    					<span style="font-size:16px;color:#000;">待激活会员</span>
+	    					<!-- <i class="iconfont icon-gengduojiantou fr"></i> -->
+	    				</a>
+	    			</li>
+		    	</ul>
+	    	</div>
+			<div class="cashlist clearfloat">
+	    		<ul>
+	    			<li class="box-s">
+	    				<a href="__APP__/Mobile/Goods/orderlist">
+	    					<i class="iconfont icon-ziyuan" style="color:#2eab7a;">
+	    					<span style="font-size:16px;color:#000;">我的订单</span></i>
+	    					<i class="iconfont icon-gengduojiantou fr"></i>
+	    				</a>
+	    			</li>
+	    			<li class="box-s">
+	    				<a href="__APP__/Mobile/Member/recommend">
+	    					<i class="iconfont icon-tuijianxiangmu" style="color:#2ab0e2;">
+	    					<span style="font-size:16px;color:#000;">直接推荐</span></i>
+	    					<i class="iconfont icon-gengduojiantou fr"></i>
+	    				</a>
+	    			</li>
+	    			<li class="box-s">
+	    				<a href="__APP__/Mobile/Withdrawals/bonuswithdrawals">
+	    					<i class="iconfont icon-duihuanjilu" style="color:#FF4500;">
+	    					<span style="font-size:16px;color:#000;">奖金提现</span></i>
+	    					<i class="iconfont icon-gengduojiantou fr"></i>
+	    				</a>
+	    			</li>
+	    			<li class="box-s">
+	    				<a href="__APP__/Mobile/Transaction/gouwu">
+	    					<i class="iconfont icon-jifen1" style="color:#e64c2e;">
+	    					<span style="font-size:16px;color:#000;">对冲提现</span></i>
+	    					<i class="iconfont icon-gengduojiantou fr"></i>
+	    				</a>
+	    			</li>
+	    			
+	    			<li class="box-s">
+	    				<a href="__APP__/Mobile/FenHong/tj_log">
+	    					<i class="iconfont icon-msnui-market" style="color:#FF4500;">
+	    					<span style="font-size:16px;color:#000;">推广奖金</span></i>
+	    					<i class="iconfont icon-gengduojiantou fr"></i>
+	    				</a>
+	    			</li>
+	    			<li class="box-s">
+	    				<a href="__APP__/Mobile/FenHong/gou_log">
+	    					<i class="iconfont icon-qianbi" style="color:#FF1493;">
+	    					<span style="font-size:16px;color:#000;">我的购物币</span></i>
+	    					<i class="iconfont icon-gengduojiantou fr"></i>
+	    				</a>
+	    			</li>
+
+	    			
+	    		</ul>
+	    	</div>
+	    	
+	    	<div class="cashlist clearfloat">
+	    		<ul>
+	    			
+	    			<li class="box-s">
+	    				<a href="__APP__/Mobile/Member/updatepassword">
+	    					<i class="iconfont icon-mima" style="color:#2eab7a;">
+	    					<span style="font-size:16px;color:#000;">修改登录密码</span></i>
+	    					<i class="iconfont icon-gengduojiantou fr"></i>
+	    				</a>
+	    			</li>
+	    			<li class="box-s">
+	    				<a href="__APP__/Mobile/Member/membersave">
+	    					<i class="iconfont icon-zhanghuziliao" style="color:#2ab0e2;">
+	    					<span style="font-size:16px;color:#000;">修改资料</span></i>
+	    					<i class="iconfont icon-gengduojiantou fr"></i>
+	    				</a>
+	    			</li>
+	    		</ul>
+	    	</div>
+	    	<a href="__APP__/Mobile/Login/logout" class="center-btn db ra3">退出登录</a>
+	    </div>    
+		<!--footer star-->
+		<footer class="page-footer fixed-footer" id="footer">
+			<ul>
+				<li>
+					<a href="__APP__/Mobile/Index/index">
+						<i class="iconfont icon-shouye"></i>
+						<p>首页</p>
+					</a>
+				</li>
+				 <li>
+					<a href="__APP__/Mobile/FenHong/index">
+						<i class="iconfont icon-yaoqingjiangli"></i>
+						<p>分红</p>
+					</a>
+				</li>
+				<!-- <li>
+					<a href="__APP__/Mobile/Goods/goodslist">
+						<i class="iconfont icon-icon04"></i>
+						<p>商城分类</p>
+					</a>
+				</li> -->
+
+				<!-- <li>
+					<a href="__APP__/Mobile/Goods/goodslist">
+						<i class="iconfont icon-gouwuche"></i>
+						<p>购物车</p>
+					</a>
+				</li> -->
+
+				<li  class="active">
+					<a href="__APP__/Mobile/Member/center">
+						<i class="iconfont icon-wode"></i>
+						<p>我的</p>
+					</a>
+				</li>
+			</ul>
+		</footer>
+		<!--footer end-->
+	</body>
+	<script type="text/javascript" src="/Public/Mobile/js/jquery-1.8.3.min.js" ></script>
+	<script src="/Public/Mobile/js/mui.min.js"></script>
+	<script src="/Public/Mobile/js/others.js"></script>
+	<script type="text/javascript" src="/Public/Mobile/js/hmt.js" ></script>
+	<script src="/Public/Mobile/slick/slick.js" type="text/javascript" ></script>
+	<!--插件-->
+	<link rel="stylesheet" href="/Public/Mobile/css/swiper.min.css">
+	<script src="/Public/Mobile/js/swiper.jqu

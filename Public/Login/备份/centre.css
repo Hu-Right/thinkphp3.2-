@@ -1,0 +1,203 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+a,ul,li{
+    text-decoration: none;
+    list-style: none;
+    color:#000;
+}
+body{
+   font-family: "宋体";
+   background:#e5e5e5;
+}
+.centre{
+    width:100%;
+    height:3rem;
+    background:#DE4410;
+    font-size:1.5rem;
+    line-height: 3rem;
+    color:#fff;
+    font-family: "宋体";
+}
+.centre a  i{
+    float: left;
+    color:#fff;
+    font-size:1.2rem;
+    margin-left: 0.2rem; 
+}
+.centre p{
+    text-align: center;
+    margin-right: 0.8rem;
+}
+
+.user{
+    width:100%;
+    height:15rem;
+    padding-top: 1rem;
+    background:#E5E5E5;
+}
+.user .head{
+    width:5rem;
+    height:5rem;
+    border-radius: 50%;
+    margin: auto;  
+}
+.user .head img{
+    width:5rem;
+    height:5rem;
+    border-radius: 50%;
+}
+.user .hui button{
+    color:#fff;
+    float: right;
+    position: fixed;
+    top:5rem;
+    right: 2rem;
+    background: red;
+    border:none;
+    border-radius: 0.2rem;
+}
+.user .text{
+    width:100%;
+    height:5rem;
+    color:#DB6229;
+    text-align: center;
+    margin-top: 0.8rem;
+  
+}
+.user .text p{
+    display: block;
+    height:2rem;
+}
+.user .text span{
+    font-size:1rem;
+}
+.user .text .psp{
+    font-size:0.5rem;
+    line-height: 2rem;
+}
+.user .left{
+    width:8.24rem;
+    height:1.5rem;
+    color:#D2673F;
+    margin: auto;
+    font-size:0.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    border:1px solid #D2673F;
+    border-radius: 0.5rem;
+}
+.user .left .right{
+    width:4.12rem;
+    height:1.5rem;
+    float: right;
+    color:#fff;
+    text-align: center;
+    background:#DE4410;
+    
+    border-radius: 0.5rem;
+}
+.user .btn{
+    width:4.2rem;
+    height:1.4rem;
+    margin: auto;
+    margin-top: 0.4rem;
+}
+.user .btn button{
+    width:4.2rem;
+    height:1.3rem;
+    border:none;
+    outline: none;
+    border-radius: 0.4rem;
+    background:#DE4410;
+}
+
+
+.list{
+    width:85%;
+    height:4rem;
+    background:#fff;
+    margin: auto;
+    margin-bottom: 0.8rem;
+    text-align: center;
+    border-radius: 0.4rem;
+}
+.list ul {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+ .list ul li{
+        width:7rem;
+        height:5rem;
+        float: left;
+        margin-top: 0.5rem;
+}
+.listbox{
+    width:85%;
+    height:13.4rem;
+    margin-top: 1rem;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    
+}
+.listbox .box-bi{
+        width:6.5rem;
+        height:6.5rem;
+        background: #fff;
+        float: left;
+    }
+.listbox .box-bi a i{
+    font-size:2rem;    
+}
+.listbox .box-bi a{
+    margin-top: 1rem;
+    line-height: 3rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+.listbox .box-bi a p{
+    margin-top: -1rem;
+}
+
+/*弹出退出框*/
+
+
+/*底部fonter*/
+.fonter{
+    width:100%;
+    height:3.5rem;
+    background:#fff ;
+    position: fixed;
+    bottom:0;left:0;
+    z-index: 999;
+}
+.fonter ul{
+    margin-top: 0.5rem;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+    
+}
+.fonter ul li{
+    width:5rem;
+    height:3rem;
+    float: left;
+   
+    text-align: center;
+    line-height:rem;
+}
+.fonter ul li i{
+    color:#E35500;
+    font-size:1.5rem;
+    
+}
+.fonter ul li a p{
+    font-size:0.3rem;
+    color:#e35500;
+}

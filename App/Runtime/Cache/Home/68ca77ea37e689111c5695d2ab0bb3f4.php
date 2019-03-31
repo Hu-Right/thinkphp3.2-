@@ -1,0 +1,67 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>提交中心</title>
+    
+    <link rel="stylesheet" href="/Public/Login/css/submit2.css">
+    <link rel="stylesheet" href="/Public/Login/css/font/iconfont.css">
+    
+  <!--其他插件-->
+  <link rel="shortcut icon" href="/Public/Login/img/bitbug_favicon.ico" /> 
+  <script src="/Public/Admin/js/jquery.js"></script>
+  <!--layer弹窗插件-->
+  <link rel="stylesheet" href="/Public/Login/layui/css/layui.css"/> 
+  <script src="/Public/Login/layui/layui.js"></script>
+</head>
+<body>
+    <div class="centre">
+        <a href="javascript:history.back(-1)"> 
+            <i class="iconfont   icon-xiaoyu">返回</i>
+        </a>
+        <p>提交中心</p>
+    </div>
+    <div  class="img">
+        <img src="/Public/Login/img/banner1.png" alt="微转">
+    </div>
+    
+<form method="post" class="form-x" action="" enctype="multipart/form-data">
+    
+    <div class="text">
+        <p>1.需要提交的任务</p>
+        <!--加下拉框-->
+        <!-- <div class="task">任务二
+            <button>▼</button>    
+        </div> -->
+        <div class="form-group">
+                <div class="col-sm-3"style="height:50px;">
+                <select class="form-control edited" id="type" name="type" style="margin-bottom: 0;width: 80%; height:30px; ">      
+                <?php if(is_array($level)): $i = 0; $__LIST__ = $level;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><option value="<?php echo ($v['id']); ?>" <?php if($v['id']==1): ?>selected<?php endif; ?> ><?php echo ($v["cname"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>       
+                </select>
+                </div>
+             </div>
+         <p>2.截取发圈图片并上传: <a href="<?php echo U('template');?>">【查看发圈任务模板】</a></p>
+         <div class="form-grom" style="margin-top:8%;">  
+
+        <input type="file" id="cs" name="logo" style="color:#DF4509;"/> 
+        </div>
+    </div>
+   <div class="text" style="height: 2rem; margin-top:-24px;">
+    <button type="submit" onclick="onk()">提交</button>
+</div>
+</form>
+ 
+<div class="text-list">
+        <span>任务领取规则:</span>
+        <p>1.VIP会员每天两次提交发圈任务的机会</p>
+        <p>2.发圈任务必须在朋友圈停留2个小时以上,则算有效任务</p>
+        <p>3.任务提交后24小时内结算佣金。</p>
+        <p>4.发布任务时必须与平台的文案和图片一致。<br>
+            &nbsp;提交的截图'个人邀请好友海报图+产品图'。
+        </p>
+    </div>
+</body>
+ 
+</html>

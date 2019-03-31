@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <title>我的管理奖</title>
+
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Public/Index/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Public/Index/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+
+    <!-- Data Tables -->
+    <link href="/Public/Index/css/plugins/dataTables/dataTables.bootstrap.css" rel="stylesheet">
+
+    <link href="/Public/Index/css/animate.min.css" rel="stylesheet">
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+    <link href="/Public/Index/css/css/style.css" rel="stylesheet">
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><a style="color:#00bb9c;margin-right:5px;" >我的管理奖记录</a></h5>
+                        <div class="ibox-tools">
+                            
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <table class="table table-striped table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th><span class="dropdown hidden-xs">财务类型</th>
+                                    <th class="dropdown hidden-xs">收入类型</th>
+                                    <th class="dropdown hidden-xs">总金额</th>
+                                    <th class="dropdown hidden-xs">奖金</th>
+                                    <th class="dropdown hidden-xs">重销积分</th>
+                                    <th class="dropdown hidden-xs">说明</th>
+                                    <th class="dropdown hidden-xs">记录时间</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            <volist name="gain_list" id="vo">
+                            <tr class="gradeX">
+                                    <td class="dropdown hidden-xs">{$vo.type}</td>
+                                    <td class="dropdown hidden-xs">{$vo.income}</td>
+                                    <td class="dropdown hidden-xs">{$vo.totalmoney}</td>
+                                    <td class="dropdown hidden-xs">{$vo.money}</td>
+                                    <td class="dropdown hidden-xs">{$vo.fuxiao_credit}</td>
+                                    <td class="dropdown hidden-xs">{$vo.info}</td>
+                                    <td class="dropdown hidden-xs">{$vo.time}</td>
+                                </tr>  
+                            </volist>                               
+                            </tbody>
+                            
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+        <div class="pages">{$page}</div>
+    </div>
+    <script src="/Public/Default/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/Public/Default/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/Public/Default/js/plugins/jeditable/jquery.jeditable.js"></script>
+    <script src="/Public/Default/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="/Public/Default/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script src="/Public/Default/js/content.min.js?v=1.0.0"></script>
+    <script>
+        $(document).ready(function(){$(".dataTables-example").dataTable();var oTable=$("#editable").dataTable();oTable.$("td").editable("../example_ajax.php",{"callback":function(sValue,y){var aPos=oTable.fnGetPosition(this);oTable.fnUpdate(sValue,aPos[0],aPos[1])},"submitdata":function(value,settings){return{"row_id":this.parentNode.getAttribute("id"),"column":oTable.fnGetPosition(this)[2]}},"width":"90%","height":"100%"})});function fnClickAddRow(){$("#editable").dataTable().fnAddData(["Custom row","New row","New row","New row","New row"])};
+    </script>
+
+</body>
+
+</html>

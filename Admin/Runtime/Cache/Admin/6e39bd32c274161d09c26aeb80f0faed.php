@@ -1,0 +1,127 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+
+<html lang="zh-cn">
+
+	<head>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<meta name="renderer" content="webkit">
+
+		<title></title>
+
+		<link rel="stylesheet" href="/Public/Admin/css/pintuer.css">
+
+		<link rel="stylesheet" href="/Public/Admin/css/admin.css">
+
+		<script src="/Public/Admin/js/jquery.js"></script>
+
+		<script src="/Public/Admin/js/pintuer.js"></script>
+
+	</head>
+
+<body>
+
+<div class="panel admin-panel">
+
+  <div class="panel-head" id="add"><strong><span class="iconfont icon-icon-tianjia"></span>增加</strong></div>
+
+  <div class="body-content">
+
+		<form method="post" class="form-x" action="/admin.php/Admin/Member/tadds" enctype="multipart/form-data"> <!--不能少-->
+
+	<div class="form-group">
+
+			<div class="label">
+	
+				<label>任务名称：</label>
+	
+			</div>
+	
+			<div class="field">
+	
+				<input type="text" class="input w50" value="" name="cname" data-validate="required:请输入任务名称" />
+	
+				<div class="tips"></div>
+	
+			</div>
+	
+		</div>
+
+	<div class="form-group">
+
+		<div class="label">
+
+			<label>文案内容：</label>
+
+		</div>
+
+		<div class="field">
+
+<textarea rows="6" cols="20" class="input w50"  name="content" style="width: 359px; padding-top: 1px; font-size: 14px; margin: 0px; height: 154px;" data-validate="required:请输入文案内容"></textarea>
+
+			<div class="tips"></div>
+
+		</div>
+
+	</div>
+
+	<div class="form-group">
+
+		<div class="label">
+
+			<label>附件图片:</label>
+
+		</div>
+
+		<div class="field">
+				<input type="file" class="input w50" name="logo[]" multiple="multiple"/>
+			 
+			<div class="tips"></div>
+		</div>
+
+	</div>
+
+	<div class="form-group">
+
+		<div class="label">
+
+			<label>是否禁用：</label>
+
+		</div>
+
+		<div class="field">
+				<input type="radio" name="status" value="0" <?php if(($data["status"] != 1)): ?>checked<?php endif; ?> >否  
+				<input type="radio" name="status" value="1" <?php if(($data["status"] == 1)): ?>checked<?php endif; ?> >是
+			<div class="tips"></div>
+		</div>
+
+	</div>
+
+      <div class="form-group">
+
+        <div class="label">
+
+          <label></label>
+
+        </div>
+
+        <div class="field">
+
+          <button class="button bg-main iconfont icon-icon--" type="submit"> 确认添加</button>
+
+        </div>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</div>
+
+</body></html>

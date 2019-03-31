@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta name="renderer" content="webkit">
+
+    <title>后台管理中心</title>  
+
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/pintuer.css">
+
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/admin.css">
+
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/bootstrap.min.css">
+
+    <script src="__PUBLIC__/Admin/js/jquery.js"></script>   
+
+</head>
+<body style="background-color:#f2f9fd;">
+<div class="header bg-main">
+
+  <div class="logo margin-big-left fadein-top">
+
+    <h1><img src="__PUBLIC__/Admin/images/y.jpg" class="radius-circle rotate-hover" height="50" alt="" />后台管理中心</h1>
+
+  </div>
+  <div class="head-2"><a class="button button-little bg-red" href="__MODULE__/Login/logout"><span class="iconfont icon-icon4"></span> 退出登录</a></div>
+</div>
+<div class="nav_top">
+  <div class="leftnav-title"><strong><span class="iconfont icon-iconfontcaidan"></span>菜单列表</strong></div>
+  <div class="br_box">
+    <ul class="bread" style="margin-bottom: 0;">
+
+      <li><a href="{:U('Index/mainin')}" target="right"><span class="iconfont icon-shouye"></span> 首页</a></li>
+
+      <li><a href="##" id="a_leader_txt"><span class="iconfont icon-xinxi"></span>网站信息</a></li>
+
+      <li><a class="" href="/" target="_blank"><span class="iconfont icon-home"></span> 前台首页</a></li>
+
+      <li><a href="__MODULE__/Admin/cache" class=""><span class="iconfont icon-weixiugongju"></span> 清除缓存</a></li>
+
+      <li><a href="javascript:;" class="" onClick="cleardb();"><span class="icon-wrench"></span> 清空数据库</a></li>
+
+
+    </ul>
+  </div>
+</div>
+<div class="leftnav">
+
+  <!-- <div class="leftnav-title"><strong><span class="icon-list"></span>菜单列表</strong></div> -->
+
+  <?php $menu = session('menu');
+
+          foreach ($menu as $k => $v): ?>
+
+        <h2><span class="iconfont"></span><?php echo $v['pri_name']; ?><i class="iconfont icon-jiantou1"></i></h2>
+
+               <!-- <ul style="display:block">-->
+
+          <ul>
+
+          <?php foreach ($v['sub'] as $k1 => $v1): ?>
+
+          <li><a href="<?php echo U($v1['module_name'].'/'.$v1['controller_name'].'/'.$v1['action_name']); ?>" target="right"></span><?php echo $v1['pri_name']; ?><span class="iconfont icon-jiantou1"></a></li>
+
+          <?php endforeach; ?>
+
+        </ul>
+
+    <?php endforeach; ?>
+</div>
+
+
+
+<div class="admin">
+
+  <iframe scrolling="auto" rameborder="0" src="/admin.php/Admin/Index/mainin.html" name="right" width="100%" height="100%"></iframe>
+
+</div>
+
+<script type="text/javascript">
+
+$(function(){
+ $('.leftnav h2:eq(0) span').addClass("icon-wode-active");
+ $('.leftnav h2:eq(1) span').addClass("icon-weibiaoti35");
+ $('.leftnav h2:eq(2) span').addClass("icon-chanpingongchang");
+ $('.leftnav h2:eq(3) span').addClass("icon-huiyuan");
+ $('.leftnav h2:eq(4) span').addClass("icon-manjiaoyi");
+ $('.leftnav h2:eq(5) span').addClass("icon-qianbao");
+  $(".leftnav h2").click(function(){
+
+    $(this).next().slideToggle(200);  
+
+    $(this).toggleClass("on"); 
+
+  })
+
+  $(".leftnav ul li a").click(function(){
+
+      $("#a_leader_txt").text($(this).text());
+
+      $(".leftnav ul li a").removeClass("on");
+
+    $(this).addClass("on");
+
+  })
+
+});
+
+
+
+function cleardb(){
+
+   
+
+    if(confirm("是否清空数据库")){
+
+     window.location.href="__MODULE__/Index/cleardb";
+
+  }
+
+}
+
+</script>
+
+</body>
+
+</html>
+

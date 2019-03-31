@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会员中心首页</title>
+    <link href="/Public/Index/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/Public/Index/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Morris -->
+    <link href="/Public/Index/css/morris-0.4.3.min.css" rel="stylesheet">
+    <!-- Gritter -->
+    <link href="/Public/Index/css/jquery.gritter.css" rel="stylesheet">
+    <link href="/Public/Index/css/animate.min.css" rel="stylesheet">
+    <link href="/Public/Index/css/style.min.css" rel="stylesheet">
+    <style type="text/css">.jqstooltip { position: absolute;left: 0px;top: 0px;visibility: hidden;background: rgb(0, 0, 0) transparent;background-color: rgba(0,0,0,0.6);filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);-ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";color: white;font: 10px arial, san serif;text-align: left;white-space: nowrap;padding: 5px;border: 1px solid white;z-index: 10000;}.jqsfield { color: white;font: 10px arial, san serif;text-align: left;}</style></head>
+ 
+  <body class="gray-bg">
+ 	
+    <div class="wrapper wrapper-content">
+      <div class="row">
+        <div class="col-sm-12">
+          <div>
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn m-r-sm" style="width: 100%; background-color: #d87570; color: #ffffff">
+                      <strong style="font-size: 16px;">余 额</strong>
+                      <br>
+                      <strong style="font-size: 18px;">¥ {$user.money}元</strong></button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn m-r-sm" style="width: 100%; background-color: #f9ad59; color: #ffffff">
+                      <strong style="font-size: 16px;">电子币</strong>
+                      <br>
+                      <strong style="font-size: 18px;">¥ {$user.currency} 元(赠送:{$user.zhengsong})</strong></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <button type="button" class="btn btn m-r-sm" style="width: 100%; background-color: #a9c7b5; color: #ffffff">
+                      <strong style="font-size: 16px; ">奖 金</strong>
+                      <br>
+                      <strong style="font-size: 18px;">¥ {$user.bonus} 元</strong></button>
+                  </td>
+                  <td>
+                    <button type="button" class="btn btn m-r-sm" style="width: 100%; background-color: #c5adca; color: #ffffff">
+                      <strong style="font-size: 16px;">购物币</strong>
+                      <br>
+                      <strong style="font-size: 18px;">{$user.shopping}元</strong></button>
+                  </td>
+                </tr>
+				 <tr>
+                  
+                  <td>
+                    <button type="button" class="btn btn m-r-sm" style="width: 100%; background-color: #c5adca; color: #ffffff">
+                      <strong style="font-size: 16px;">会员等级</strong>
+                      <br>
+                      <strong style="font-size: 18px;">{$user.level}星</strong></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <script src="/Public/Index/css/jquery.min.js"></script>
+        <script src="/Public/Index/css/bootstrap.min.js"></script>
+        <script src="/Public/Index/css/jquery.flot.js"></script>
+        <script src="/Public/Index/css/jquery.flot.tooltip.min.js"></script>
+        <script src="/Public/Index/css/jquery.flot.spline.js"></script>
+        <script src="/Public/Index/css/jquery.flot.resize.js"></script>
+        <script src="/Public/Index/css/jquery.flot.pie.js"></script>
+        <script src="/Public/Index/css/jquery.flot.symbol.js"></script>
+        <script src="/Public/Index/css/jquery.peity.min.js"></script>
+        <script src="/Public/Index/css/peity-demo.min.js"></script>
+        <script src="/Public/Index/css/content.min.js"></script>
+        <script src="/Public/Index/css/jquery-ui.min.js"></script>
+        <script src="/Public/Index/css/jquery-jvectormap-1.2.2.min.js"></script>
+        <script src="/Public/Index/css/jquery-jvectormap-world-mill-en.js"></script>
+        <script src="/Public/Index/css/jquery.easypiechart.js"></script>
+        <script src="/Public/Index/css/jquery.sparkline.min.js"></script>
+        <script src="/Public/Index/css/sparkline-demo.min.js"></script>
+      </div>
+    </div>
+  </body>
+
+</html>

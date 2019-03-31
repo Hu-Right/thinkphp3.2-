@@ -1,0 +1,68 @@
+ <script type="text/javascript">
+                mui.init({
+                    swipeBack: false, //启用右滑关闭功能,
+                    gestureConfig: {
+                        longtap: true, //默认为false
+                        release: false //默认为false，不监听
+                    }
+                });
+                //开启预览图片
+                mui.previewImage();
+                mui.plusReady(function() {
+                    imageDetail.init();
+                })
+            </script>
+
+<template id="imgs">
+                {{each imgList item i}}
+                <li class="mui-table-view-cell mui-media mui-col-xs-4" data-imgurl ="{{item.imgUrl}}">//点击的li
+                    <a href="#">
+                        <img class="mui-media-object" style="width:100px;height:100px;" data-preview-src="" data-preview-group="2" src={{item.imgUrl}}>
+                    </a>
+                    <span id="" class="id_span">{{item.createTime|datefomate}}</span>
+                </li>
+                {{/each}}
+            </template>
+
+<!--弹框的div-->
+			<div id="picture" class="mui-popover mui-popover-action mui-popover-bottom" style="z-index: 99999999">
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="javascript:;" id="saveImg">保存图片</a>
+					</li>
+				</ul>
+				<ul class="mui-table-view">
+					<li class="mui-table-view-cell">
+						<a href="#picture"><b>取消</b></a>
+					</li>
+				</ul>
+			</div>
+
+<script>
+            //长按图片触发事件
+                    mui("#imgsul").on('longtap', "li", function() {
+                        //alert(this.dataset.imgurl);
+                        //开启弹框
+                        mui('#picture').popover('toggle');
+                        var imgurl = this.dataset.imgurl;
+                        mui("li").off().on('tap', "#saveImg", function() {
+                            var imgDtask = plus.downloader.createDownload(imgurl, {
+                                //                                method: 'GET'
+                            }, function(d, status) {
+                                if(status == 200) {
+                                    plus.gallery.save(d.filename, function() { //保存到相册
+                                        plus.io.resolveLocalFileSystemURL(d.filename, function(enpty) {
+                                            // 关闭弹框
+                                            mui('#picture').popover('toggle');
+                                            mui.toast('保存成功')
+                                        });
+
+                                    })
+                                } else {
+                                    mui.toast('保存失败')
+                                }
+                            });
+                            imgDtask.start();
+                        });
+                    })
+                </script>

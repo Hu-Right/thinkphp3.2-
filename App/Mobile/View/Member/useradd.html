@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>注册会员</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+	<link rel="stylesheet" type="text/css" href="/Public/Mobile/css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="/Public/Mobile/css/page.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mobile.css"/>
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/iconfont.css"/>
+	<script src="/Public/Mobile/js/rem.js"></script> 
+	
+
+</head>
+	<body>
+		<!--header star-->
+		<header class="mui-bar mui-bar1 mui-bar-nav mui-bar-nav1" id="header">
+			<a class="btn" href="javascript:history.go(-1)">
+	            <i class="iconfont icon-fanhui"></i>
+	        </a>
+	        <div class="top-sch-box top-sch-boxtwo top-sch-boxthree flex-col">
+	                      返回
+	        </div>
+	    </header>
+	    <!--header end-->
+	    <div class="warp warpthree clearfloat">
+	    	<div class="h-top h-toptwo clearfloat box-s">
+	    		<p class="tu"><img src="/Public/Mobile/img/touxiang.png"/></p>
+	    		<p class="nr">{$user.username}<span>
+										</span></p>
+	    	</div>
+			
+	    	<div class="wrapper wrapper-content animated fadeInRight">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="ibox float-e-margins">
+							<div class="ibox-title">
+								<h5><a style="color:#00bb9c;margin-right:5px;">注册下级会员</a> 
+								</h5>
+								<div class="ibox-tools">
+									
+								</div>
+							</div>
+							<div class="ibox-content" >
+								<form method="post" action="__APP__/Mobile/Member/useradd" class="form-horizontal" id="form-admin-add" >
+										<div class="form-hy">
+											<label class="xm">真实姓名：</label>
+											<div class="xm-content">
+												<input type="text" name="username" id="username" placeholder="请输入真实姓名" >
+											</div>
+										 </div>
+										 <div class="form-hy">
+										<label class="xm">手机号码：</label>
+											<div class="xm-content">
+												<input type="text" name="mobile" id="mobile" placeholder="请输入手机号码">
+											</div>
+										 </div>
+										<div class="form-hy">
+										<label class="xm">身份证号码：</label>
+											<div class="xm-content">
+												<input type="text" name="card" maxlength="18" id="card" placeholder="请输入身份证号码">
+											</div>
+										 </div>
+										 <div class="form-hy">
+										<label class="xm">登录ID：</label>
+											<div class="xm-content">
+												<input type="text" name="email" id="email" value="" onblur="checkUser()" placeholder="请输入登录ID" >
+											</div>
+										 </div>
+
+										 <!-- <div class="clear"></div>
+										 <div class="form-hy">
+										<label class="xm">微信号码：</label>
+											<div class="xm-content">
+												<input type="text" name="weixin" id="weixin" placeholder="请输入微信号码" >
+											</div>
+										 </div> -->
+										<!-- <div class="clear"></div>
+										 <div class="form-hy">
+										<label class="xm">支付宝账户：</label>
+											<div class="xm-content">
+												<input type="text" name="zhifubao" id="zhifubao" placeholder="请输入支付宝账户" >
+											</div>
+										 </div> -->
+										 <div class="form-hy">
+										<label class="xm">登录密码：</label>
+											<div class="xm-content">
+												<input type="password" name="password" id="password" placeholder="请输入登录密码"  value="666666">
+											</div>
+										 </div>
+									<div class="form-hy">
+										<label class="xm">确认登录密码：</label>
+											<div class="xm-content">
+												<input type="password" name="rpassword" id="rpassword" placeholder="请输入确认登录密码"  value="666666">
+											</div>
+										 </div>
+										<!-- <div class="clear"></div>
+										<div class="form-hy">
+										<label class="xm">会员级别：</label>
+											<div class="xm-content">
+											<select class=" edited" id="type" name="type">
+											  <option value="1">VIP至尊卡--(￥<?php echo C("jinkabaodan");?>)</option>
+											</select>
+											</div>
+										 </div> -->
+										 <div class="form-hy">
+										<label class="xm">区域：</label>
+
+											<div class="xm-content">
+											
+												<label >
+													<input type="radio" value="0" name="region" checked> 左区
+												</label>
+												<label >
+													<input type="radio" value="1" name="region" > 右区
+												</label>
+													
+											</div>
+										</div>
+
+										<div class="form-hy">
+										<label class="xm">推荐人ID：</label>
+											<div class="xm-content">
+												<input type="text" name="tuijian" id="tuijian"  placeholder="请输入推荐人ID" value="{$user.email}" onblur="tuandui()">
+											</div>
+										 </div>  
+										<div class="form-hy">
+										<label class="xm">推荐人名称：</label>
+											<div class="xm-content">
+												<input type="text" name="tuijians" id="tuijians"  placeholder=""  value="{$user.username}" readonly>
+											</div>
+										 </div> 
+										<div class="form-hy">
+										<label class="xm">节点账号：</label>
+											<div class="xm-content">
+												<input type="text" name="jiedian" id="jiedian"  placeholder="请输入节点账号" value="{$user.email}"   onblur="jiesdians()">
+											</div>
+										 </div> 	
+										<div class="form-hy">
+										<label class="xm">节点名称：</label>
+											<div class="xm-content">
+												<input type="text" name="jiedians" id="jiedians"  placeholder="请输入节点账号" value=""  readonly>
+											</div>
+										 </div> 
+										<div class="form-hy">
+										<label class="xm">消费级别：</label>
+											<div class="xm-content">
+											<select name="level" id="level" style="margin-bottom: 0;width: 80%;">
+											  <volist name="levels" id="v">
+												<option value="{$v['id']}" <if condition="$v.id==1">selected</if> >{$v['level_name']}--（￥{$v['money']}）</option>
+											  </volist>
+											</select>
+												
+											</div>
+										 </div> 
+										<div class="form-hy">
+										<label class="xm">性别：</label>
+
+											<div class="xm-content">
+											
+												<label >
+													<input type="radio" value="男" name="gender" checked> 男</label>
+												<label>
+													<input type="radio" value="女" name="gender" > 女
+													</label>
+													 <label>
+													<input type="radio" value="保密" name="gender" > 保密
+													</label>
+													
+											</div>
+										</div>
+									<div class="hr-line"></div>
+									
+									<div class="button-center">
+										<div class="col-sm-8 col-sm-offset-2">
+											<input class="btn btn-primary" type="submit" value="注册下级会员">
+										</div>
+									</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>   	
+	    </div>
+	    </div>
+	    
+	    <!--footer star-->
+		<footer class="page-footer fixed-footer" id="footer">
+	        <ul>
+	            <li>
+	                <a href="__APP__/Mobile/Index/index">
+	                    <i class="iconfont icon-shouye"></i>
+	                    <p>首页</p>
+	                </a>
+	            </li>
+	             <li>
+	                <a href="__APP__/Mobile/FenHong/index">
+	                    <i class="iconfont icon-yaoqingjiangli"></i>
+	                    <p>分红</p>
+	                </a>
+	            </li>
+	            <li  class="active">
+	                <a href="__APP__/Mobile/Member/center">
+	                    <i class="iconfont icon-wode"></i>
+	                    <p>我的</p>
+	                </a>
+	            </li>
+	        </ul>
+	    </footer>
+		<!--footer end-->
+	</body>
+	<script type="text/javascript" src="/Public/Mobile/js/jquery.min.js?v=2.1.4"></script> 
+	<script>
+	window.onload = function(){
+        tuandui();
+        jiesdians();
+    }
+    function jiesdians(){
+        var tuijians=document.getElementById("jiedian").value;
+        $.ajax({
+                type:"POST",
+                url:"{:U('Member/mpms')}",
+                data : "email="+tuijians,
+                success : function(msgs) {
+                    if(msgs == "abc"){
+                        alert("用户未找到,请确认");
+                    }else{
+                       document.getElementById("jiedians").value=msgs;
+                    }
+                }
+                });
+
+    }
+    function checkUser(){
+    	var email=document.getElementById("email").value;
+    	$.ajax({
+    		type:'post',
+    		url:'{:U('Member/checkuser')}',
+    		data:{email:email},
+    		success:function(ret){
+    			if(ret==1){
+    				alert('账户已存在，请重新输入！');
+    				document.getElementById("email").value='';
+    			}
+    		}
+    	})
+    }
+
+	// function shenfen(){
+ //        var shenfen=document.getElementById("mobile").value;
+ //        var liu=shenfen.substr(-6);
+ //        $.ajax({
+ //                type:"POST",
+ //                url:"{:U('Member/gld')}",
+ //                data : "liu="+liu,
+ //                success : function(msgs) {
+ //                    if(msgs == "abc"){
+ //                        alert("手机号重复,不能申请");
+ //                    }else{
+ //                       document.getElementById("email").value=msgs;
+ //                    }
+                       
+ //                }
+ //                });
+        
+ //    }
+	function tuandui(){
+        var tuijian=document.getElementById("tuijian").value;
+        $.ajax({
+                type:"POST",
+                url:"{:U('Member/mpm')}",
+                data : "email="+tuijian,
+                success : function(msg) {
+                    if(msg == "abc"){
+                        alert("用户未找到,请确认");
+                    }else{
+                       document.getElementById("tuijians").value=msg;
+                    }
+                }
+                });
+
+    }
+	</script>
+</html>

@@ -1,0 +1,1 @@
+<?php	return array ( 'chongxiao' => '15', 'guanlifei' => '5', 'aixinjijin' => '5', );?>

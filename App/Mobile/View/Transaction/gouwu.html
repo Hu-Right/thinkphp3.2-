@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>余额兑充提现</title>
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Public/Index/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Public/Index/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/Public/Index/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/Public/Index/css/animate.min.css" rel="stylesheet">
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/page.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mobile.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/iconfont.css"/>
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+    <script src="/Public/Mobile/js/rem.js"></script> 
+</head>
+<style>
+
+</style>
+<body class="gray-bg">
+<header class="mui-bar mui-bar1 mui-bar-nav mui-bar-nav1" id="header">
+            <a class="btn" href="javascript:history.go(-1)">
+                <i class="iconfont icon-fanhui"></i>
+            </a>
+            <div class="top-sch-box top-sch-boxtwo top-sch-boxthree flex-col">
+                          返回
+            </div>
+        </header>
+        <!--header end-->
+        <div class="warp warpthree clearfloat">
+        <div class="h-top h-toptwo clearfloat box-s">
+            <p class="tu"><img src="/Public/Mobile/img/touxiang.png"/></p>
+            <p class="nr">{$user.username}</p>
+        </div>
+    <div class="mywrapper">
+        <div class="myrow">
+            <div class="mycol">
+                <div class="ibox-title">
+                    <h5><a style="color:#00bb9c;margin-right:5px;" href="">余额兑充提现</a></h5>        
+                </div>
+                <div class="my_content">
+                    <form method="post" action="" class="form-horizontal" id="form-admin-add" >
+                            <div class="form-item">
+                                <div class="control-left">当前可用余额:</div>
+                                <div class="control-right">
+                                    <span style="margin-left:10px; font-weight: bold; color:#07bfa3">可用 {$user.currency} 元 </span> 
+                                </div>
+                             </div>
+
+                            <div class="form-item">
+                                <div class=" control-left">请输入转账金额:</div>
+                                <div class="control-right">
+                                    <input type="text" name="money" id="money" placeholder="请输入转账金额" class="form-input">
+                                </div>
+                             </div>
+
+                            <div class="form-item">
+                            <div class=" control-left">请输入对方的账户:</div>
+                                <div class="control-right">
+                                    <input type="text" name="email" id="email" placeholder="请输入对方的账户" class="form-input"  onblur="tuandui()">
+                                </div>
+                            </div>
+
+                            <div class="form-item">
+                            <div class=" control-left">对方的用户名:</div>
+                                <div class="control-right">
+                                    <input type="text" name="tuijians" id="tuijians" placeholder="请输入对方的用户名" class="form-input" readonly="">
+                                </div>
+                            </div>
+                            <div class="form-item">
+                            <div class=" control-left">请输入二级密码:</div>
+                                <div class="control-right">
+                                    <input type="password" name="erpsd" id="erpsd" placeholder="请输入二级密码" class="form-input">
+                                </div>
+                             </div>
+                        <div class="hr-line-dashed"></div>
+                            
+                                
+                          <div class="form-item control-bottom">
+                                <input class="btn btn-primary" style="background-color:#25cb83;color: #fff;" type="button" value="我要转账" onclick="duanxin()">
+                        </div>
+                    </form>
+                 </div>
+            </div>
+        </div>
+    </div>
+
+   <script type="text/javascript" src="/Public/Mobile/js/jquery-1.8.3.min.js" ></script>   
+
+    
+    <script type="text/javascript">
+        function tuandui(){
+        var tuijian=document.getElementById("email").value;
+        $.ajax({
+                type:"POST",
+                url:"{:U('Transaction/mpm')}",
+                data : "email="+tuijian,
+                success : function(msg) {
+                    if(msg == "abc"){
+                        alert("用户未找到,请确认");
+                        return false;
+                    }else if(msg==1){
+                        alert("该会员不是报单中心，无法转账！");
+                        return false;
+                    }else{
+                       document.getElementById("tuijians").value=msg;
+                    }
+                }
+                });
+
+    }
+        function duanxin(){
+            var number=document.getElementById("money").value;
+            var email=document.getElementById("email").value;
+            var erpsd=document.getElementById("erpsd").value;
+            var tuijians=document.getElementById("tuijians").value;
+            if(tuijians==''){
+                alert("该会员不是报单中心，无法转账！");
+                number=0;
+                return false;
+            }
+            if(number > 0){
+                $.ajax({
+                type:"POST",
+                url:"{:U('Transaction/gouwu')}",
+                data : "money="+number+"&email="+email+"&erpsd="+erpsd,
+                success : function(msg) {
+                    if(msg == 1){
+                        alert("转账成功");
+                        window.location="{:U('FenHong/yu_log')}";
+                    }else{
+                        alert(msg);
+                        window.location="{:U('Transaction/gouwu')}";
+                    }
+                }
+                });
+            }else{
+                alert("请输入正确的转账金额");
+            }
+            
+        }
+    </script>
+    
+    
+</body>
+
+</html>

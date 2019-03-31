@@ -1,0 +1,38 @@
+<?php 
+namespace Admin\Controller;
+use Admin\Controller\IndexController;
+class BonusController extends IndexController {
+	//层碰设置
+	public function Bonus(){
+		if(IS_POST){
+			$filename = $_SERVER['DOCUMENT_ROOT'] . '/Admin/Common/Conf/Bonus_config.php';
+            $filename2 = $_SERVER['DOCUMENT_ROOT'] . '/App/Common/Conf/Bonus_config.php';
+            file_put_contents($filename, strip_whitespace("<?php\treturn " . var_export($_POST, true) . ";?>"));
+            file_put_contents($filename2, strip_whitespace("<?php\treturn " . var_export($_POST, true) . ";?>"));
+            $this->success('编辑成功！');
+		}else {
+			//层碰奖金
+			$this->touchone = C('touchone');
+			$this->touchtwo = C('touchtwo');
+			//量碰设置
+			$this->amountjin = C('amountjin');
+			$this->amountzuan = C('amountzuan');
+			//见点设置
+			$this->jiandianceng = C('jiandianceng');
+			$this->jiandianjin = C('jiandianjin');
+			$this->jiandianzuan = C('jiandianzuan');
+			//感恩奖设置.
+			$this->zhituiyi = C('zhituiyi');
+			$this->zhituier = C('zhituier');
+			$this->zhituisan = C('zhituisan');
+			//领导奖设置
+			
+			$this->display();
+		}
+	}
+	
+	
+	
+}
+	
+?>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>订货商城</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <script src="/Public/Mobile/js/rem.js"></script> 
+    <script src="/Public/Mobile/js/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/base.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/page.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/loaders.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/loading.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mui.picker.min.css" />
+	<link href="/Public/Mobile/css/mui.picker.css" rel="stylesheet" />
+	<link rel="stylesheet" type="text/css" href="/Public/Mobile/css/iconfont.css"/>
+<script type="text/javascript">
+	$(window).load(function(){
+		$(".loading").addClass("loader-chanage")
+		$(".loading").fadeOut(300)
+	})
+</script>
+</head>
+	<body>
+		<!--header star-->
+		<header class="mui-bar mui-bar1 mui-bar-nav mui-bar-nav1" id="header">
+			<a class="btn" href="javascript:history.go(-1)">
+	            <i class="iconfont icon-fanhui"></i>
+	        </a>
+	        <div class="top-sch-box top-sch-boxtwo top-sch-boxthree flex-col">
+	                      返回
+	        </div>
+	    </header>
+	    <!--header end-->
+	    
+	    <div class="warp warpthree clearfloat">
+	    	
+			<div>
+				<div class="like clearfloat box-s">
+		        	
+		        	<div class="content clearfloat">
+					<volist name="list" id="vo">
+		        		<div class="list clearfloat fl">
+		        			<a href="/Mobile/Decgoods/show/id/{$vo.id}">
+			        			<div class="tu clearfloat">
+			        				<img src="{$vo.logo}"/>
+			        			</div>
+			        			<div class="bottom clearfloat box-s">
+			        				<p class="over">{$vo.goods_name}</p>
+			        				<span>￥{$vo.shop_price}</span>
+			        			</div>
+		        			</a>
+		        		</div>
+		        		</volist>
+		        		
+		        	</div>
+		        </div>
+				{$page}
+			</div>
+	    <!--footer star-->
+		<footer class="page-footer fixed-footer" id="footer">
+			<ul>
+				<li>
+					<a href="__APP__/Mobile/Index/index">
+						<i class="iconfont icon-shouye"></i>
+						<p>首页</p>
+					</a>
+				</li>
+				 <li  class="active">
+					<a href="__APP__/Mobile/FenHong/index">
+						<i class="iconfont icon-yaoqingjiangli"></i>
+						<p>分红</p>
+					</a>
+				</li>
+				<li>
+					<a href="__APP__/Mobile/Member/center">
+						<i class="iconfont icon-wode"></i>
+						<p>我的</p>
+					</a>
+				</li>
+			</ul>
+		</footer>
+		<!--footer end-->
+	</body>
+	<script type="text/javascript" src="/Public/Mobile/js/jquery-1.8.3.min.js" ></script>
+	<script src="/Public/Mobile/js/mui.min.js"></script>
+	<script src="/Public/Mobile/js/mui.picker.min.js"></script>
+	<script src="/Public/Mobile/js/others.js"></script>
+	<script type="text/javascript" src="/Public/Mobile/js/hmt.js" ></script>
+	<script src="/Public/Mobile/slick/slick.js" type="text/javascript" ></script>
+	<!--插件-->
+	<link rel="stylesheet" href="/Public/Mobile/css/swiper.min.css">
+	<script src="/Public/Mobile/js/swiper.jquery.min.js"></script>
+</html>

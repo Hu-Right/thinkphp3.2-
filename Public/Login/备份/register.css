@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0
+}
+i{
+    color:#fff;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background:#F9901A;
+    font-size:0.34rem;
+}
+
+.register{
+    width:100%;
+    height:100%; 
+}
+.register .enroll{
+   width:100%;
+   height:3rem;
+}
+.register .enroll a{
+  float: right;
+  margin: 2rem 2rem 0 0;
+  color:#fff;
+  font-size:0.9rem;
+}
+.register .img{
+    width:100%;
+    height:6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin-top: 3rem;
+}
+.form{width:100%;height:auto;}
+.register .input {
+  width:17rem;
+  height:3rem;
+  margin: auto;
+}
+.register .input input{
+    width:14rem;
+    height:2rem;
+    margin-top: 3rem;
+    border:none;
+    border-radius: 0.3rem;
+    padding-left: 0.7rem;
+}
+.register .input i.iconfont{
+    color:#fff;
+}
+.register .pasword{
+    margin-top: 1rem;
+}
+.register .btn{
+    width:17rem;
+    margin: auto;
+    margin-top: 4rem;
+}
+.register .btn button{
+    width:17rem;
+    height:2.5rem;
+    font-size:1rem;
+    border-radius: 0.3rem;
+    background:#fff;
+    color:#ED4006;
+    border: none;
+    /*margin-left: 3rem;*/
+
+}
+.register .sign{
+    width:100%;
+    height:2rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+.register .sign a{
+    color:#fff;
+    font-size:0.9rem;
+    
+}

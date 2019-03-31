@@ -1,0 +1,1 @@
+<?php	return array ( 'Bankname' => '建设银行', 'Bankaccount' => '3352656658956456122', 'bankdeposit' => '北京丰田台区分行', 'bankuser' => '北京腾讯科技有限公司', 'zhifubao' => '15689565861', 'weixin' => '15689565861', );?>

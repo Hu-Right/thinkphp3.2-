@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<style>
+.wrapper {
+  padding: 0;
+}
+
+</style>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提现</title>
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Public/Index/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Public/Index/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/Public/Index/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/Public/Index/css/animate.min.css" rel="stylesheet">
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+
+</head>
+<style>
+.form-group span{
+  display: block;
+  color: #f10214;
+  margin-top: 5px;
+}
+</style>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight" style="padding:0">
+        <div class="row" width="100%">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><a style="color:#00bb9c; margin-right:5px;" href="">提现</a></h5>
+                        <div class="ibox-tools">
+                            
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" action="" class="form-horizontal" id="form-admin-add" >
+                        
+							<div class="form-group">
+                                <label class="col-sm-5 control-label">我的余额</label>
+                                    <div class="col-sm-3">
+                                    <input type="text" class="form-control" value="{$user.currency}元" disabled="">
+                                </div>
+                            	</div>
+                                <div class="form-group">
+                                <label class="col-sm-5 control-label">银行名称</label>
+                                    <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="mode" value="{$puser.mode}"><span>请输入您的银行名称如：建设银行</span>
+                                </div>
+                            	</div>
+                              <div class="form-group">
+                                <label class="col-sm-5 control-label">开户行信息</label>
+                                    <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="khhxx" value="{$puser.khhxx}" ><span>请输入您的开户行信息</span>
+                                </div>
+                              </div>
+								<div class="form-group">
+                                <label class="col-sm-5 control-label">提现帐号</label>
+                                    <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="accounts"  value="{$puser.accounts}">
+                                </div>
+                            	</div>
+								<div class="form-group">
+                                <label class="col-sm-5 control-label">提现姓名</label>
+                                    <div class="col-sm-3">
+                                    <input type="text" class="form-control" name="name" value="{$user.username}" readonly>
+                                </div>
+                            	</div>
+								<div class="form-group">
+                                <label class="col-sm-5 control-label">二级密码</label>
+                                    <div class="col-sm-3">
+                                    <input type="password" class="form-control" name="erpsd" value="">
+                                </div>
+                              </div>
+								              <div class="form-group">
+                                <label class="col-sm-5 control-label">提现金额（元）</label>
+                                    <div class="col-sm-3 wan-spinner-1">
+                                    <input style="height: 32px; margin-left:10px; margin-right:10px; text-align: center; border:1px solid #469987; " type="number" name="money" step="100"  onblur="checkMoney()" id="money" value="500">
+                                  
+                                    </div>
+                            	</div>
+                              <div class="form-group">
+                                <label class="col-sm-5 control-label">提现手续费</label>
+                                    <div class="col-sm-3 wan-spinner-1">
+                                    <input style="height: 32px; margin-left:10px; margin-right:10px; text-align: center; border:1px solid #469987; " type="text" name="shouxu" step="100" readonly id="shouxu">
+                                  
+                                    </div>
+                              </div>
+								 					
+								<div class="form-group">
+                                <label class="col-sm-5 control-label">留言</label>
+                                    <div class="col-sm-3">
+                                    <textarea name="info" class="form-control" > </textarea>
+                                </div>
+                            	</div>
+								 
+                          
+                                
+                            <div class="hr-line-dashed" style="margin-top:-10px;"></div>
+                            <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-2" style="text-align: center;">
+                             <input class="btn btn-primary" type="submit" value="确定我要提现">                                              
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+    <script>
+        $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+    </script>
+    <script src="/Public/Index/css/js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript">
+	$(function(){
+    checkMoney();
+	$("#form-admin-add").validate({
+		rules:{
+			uiUJiner:{
+				required:true,
+			},
+           uZfPwd:{
+                required:true,
+                minlength:6,
+                maxlength:6
+
+            },
+		}, 
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+});
+  
+  function checkMoney(){
+    var re = /^[0-9]*[1-9][0-9]*$/ ;
+    var money = document.getElementById('money').value;
+    var s=money/500;
+    if(money<500){
+      alert('提现金额需大于等于500!');
+      alert(money);
+    }else if(money%500 != 0){
+       alert('提现金额需为500的倍数!'); 
+       document.getElementById('money').value="";
+    }else{
+        $.ajax({
+        url:'{:U("Home/Withdrawals/ajax_checkMoney")}',
+        type:'post',
+        data:'money='+money,
+        dataType:'html',
+      success:function(data){
+          if(data!=0){
+            $("#shouxu").val(data);
+          }
+        }
+      });
+    }
+    
+  }
+</script> 
+  
+  <script src="/Public/Default/dist/wan-spinner.js"></script> 
+  <script>
+  $(document).ready(function() {
+    var options = {
+      maxValue: 8000,
+      minValue: 500,
+      step: 500,
+      inputWidth: 150,
+      start: 0,
+      plusClick: function(val) {
+        console.log(val);
+      },
+      minusClick: function(val) {
+        console.log(val);
+      },
+      exceptionFun: function(val) {
+        console.log("excep: " + val);
+      },
+      valueChanged: function(val) {
+        console.log('change: ' + val);
+      }
+    }
+    $(".wan-spinner-1").WanSpinner(options);
+
+  });
+  </script>   
+    
+</body>
+
+</html>

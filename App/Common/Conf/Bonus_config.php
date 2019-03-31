@@ -1,0 +1,1 @@
+<?php	return array ( 'jinkabaodan' => '1000', 'referee' => '10000', 'interest' => '1000', );?>

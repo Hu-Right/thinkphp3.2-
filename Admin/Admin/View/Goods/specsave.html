@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="zh-cn">
+
+  
+
+  <head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <meta name="renderer" content="webkit">
+
+    <title></title>
+
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/pintuer.css">
+
+    <link rel="stylesheet" href="__PUBLIC__/Admin/css/admin.css">
+
+    <script src="__PUBLIC__/Admin/js/jquery.js"></script>
+
+    <script src="__PUBLIC__/Admin/js/pintuer.js"></script>
+
+  </head>
+
+  
+
+  <body>
+
+    <div class="panel admin-panel">
+
+      <div class="panel-head" id="add">
+
+        <strong>
+
+          <span class="iconfont icon-icon-xiugai"></span>参数修改</strong>
+
+      </div>
+
+      <div class="body-content">
+
+        <form method="post" class="form-x" action="__SELF__" enctype="multipart/form-data">
+
+          <input type="hidden" name="id" value="{$data.id}">
+
+          <div class="form-group">
+
+            <div class="label">
+
+              <label>二维码名称：</label></div>
+
+            <div class="field">
+
+              <input type="text" class="input w50" value="{$data.name}"  name="name"/>
+
+              <div class="tips"></div>
+
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <div class="label">
+
+              <label>尺寸：</label></div>
+
+            <div class="field">
+
+              <input type="text" class="input w50" value="{$data.size}" name="size"  />
+
+              <div class="tips"></div>
+
+            </div>
+
+          </div>
+
+          <div class="form-group">
+
+            <div class="label">
+
+              <label>跳转网址：</label></div>
+
+            <div class="field">
+
+              <input type="text" class="input w50" value="{$data.href}" name="href"  />
+
+              <div class="tips"></div>
+
+            </div>
+
+            
+          </div>
+          
+          <img style="margin-left: 160px; width: 300px;" src="{$data.logo}" />
+
+          <div class="form-group">
+
+            <div class="label">
+
+              <label>logo图片：</label></div>
+
+            <div class="field">
+
+			  <input type="file"  value="{$data.logo}" class="input w50" name="logo" />
+
+              <div class="tips"></div>
+
+            </div>
+
+			  
+
+          </div>
+		
+          <div class="form-group">
+
+            <div class="label">
+
+              <label>是否显示:</label></div>
+              
+              <div class="field">
+                  
+              <input <?php if($data['is_show']=='是') echo 'checked="checked"'; ?>type="radio" name="is_show" maxlength="60" value="是" />是  
+              <input <?php if($data['is_show']=='否') echo 'checked="checked"'; ?> type="radio" name="is_show" maxlength="60" value="否" />否   
+              
+          <div class="tips"></div>
+                  
+            </div>
+          </div>
+            <div class="field">
+              &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;&nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+              <button class="button bg-main iconfont icon-icon--" type="submit">确认修改</button></div>
+        </form>
+
+      </div>
+
+    </div>
+
+  </body>
+
+
+
+</html>
+
+ 
+
+
+  

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{$goods.goods_name}</title>
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Public/Index/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Public/Index/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/Public/Index/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/Public/Index/css/animate.min.css" rel="stylesheet">
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+
+</head>
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><a style="color:#00bb9c;" href="">{$goods.goods_name}</a></h5>
+                         <div class="ibox-tools">
+                        </div>
+                    </div>
+                  <div class="ibox-content">
+                  <div style="text-align:center;padding-bottom: 10px;"><img src="{$goods.logo}"  style=" width: 300px; height: 300px;border-radius: 5px;"></div>
+                       <form method="post" action="" class="form-horizontal" id="form-admin-add">
+                        <input type="text" class="form-control" name="goods_id" value="{$goods.id}" style="display:none">
+                                 <div class="form-group">
+                                        <label class="col-sm-5 control-label">产品名称：</label>
+                                        <div class="col-sm-3">
+                                        <input type="text"  value="{$goods.goods_name}" class="form-control"  readonly>
+                                        </div>
+                                    </div>
+
+                                 <div class="form-group">
+                                <label class="col-sm-5 control-label">产品价格：</label>
+                                    <div class="col-sm-3">
+                                         <input type="text" class="form-control" value="{$goods.shop_price}" disabled="">
+                                    </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                <label class="col-sm-5 control-label">订货数量：</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control" name="num" value="" placeholder="请输入数量">
+                                    </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                <label class="col-sm-5 control-label">收件人姓名：</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control" name="name" value="" placeholder="请输入姓名">
+                                    </div>
+                                 </div>
+
+
+                                 <div class="form-group">
+                                <label class="col-sm-5 control-label">收货地址：</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control" name="address" value="" placeholder="请输入地址">
+                                    </div>
+                                 </div>
+
+                                 <div class="form-group">
+                                <label class="col-sm-5 control-label">联系电话：</label>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control" name="mobile" value="" placeholder="请输入电话">
+                                    </div>
+                                 </div>
+
+                                <div class="form-group">
+                                <label class="col-sm-5 control-label">支付类型</label>
+
+                                    <div class="col-sm-3">
+                                       <label class="checkbox-inline">
+                                            <input type="radio" checked value="1" name="payment" > 购物币
+                                            <input type="radio" value="2" name="payment" > 余额
+                                            <input type="radio" value="3" name="payment" > 重消积分
+                                        </label>                      
+                                    </div>
+                                </div>
+
+                            <div class="hr-line-dashed"></div>
+                            <div class="hr-line-dashed" style="margin-top:-10px;"></div>
+                            <div class="form-group">
+                                <div class="col-sm-8 col-sm-offset-2" style="text-align: center;">
+                                     <input class="btn btn-primary" type="submit" value="立即购买"> </div>
+                                </div>
+                        </form>
+                    </div>
+          
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <script>
+        $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+    </script>
+    
+    <script type="text/javascript">
+  $(function(){
+  $("#form-admin-add").validate({
+    rules:{
+      uiUJiner:{
+        required:true,
+      },
+           uZfPwd:{
+                required:true,
+                minlength:6,
+                maxlength:6
+
+            },
+    }, 
+    onkeyup:false,
+    focusCleanup:true,
+    success:"valid",
+    submitHandler:function(form){
+      $(form).ajaxSubmit();
+      var index = parent.layer.getFrameIndex(window.name);
+      parent.$('.btn-refresh').click();
+      parent.layer.close(index);
+    }
+  });
+});
+</script> 
+  
+  <script src="/Public/Default/dist/wan-spinner.js"></script> 
+
+  <script>
+  $(document).ready(function() {
+    var options = {
+      maxValue: 8000,
+      minValue: 500,
+      step: 500,
+      inputWidth: 150,
+      start: 0,
+      plusClick: function(val) {
+        console.log(val);
+      },
+      minusClick: function(val) {
+        console.log(val);
+      },
+      exceptionFun: function(val) {
+        console.log("excep: " + val);
+      },
+      valueChanged: function(val) {
+        console.log('change: ' + val);
+      }
+    }
+    $(".wan-spinner-1").WanSpinner(options);
+
+  });
+  </script>  
+    <script src="/Public/Default/js/jquery.min.js?v=2.1.4"></script>
+    <script src="/Public/Default/js/bootstrap.min.js?v=3.3.6"></script>
+    <script src="/Public/Default/js/content.min.js?v=1.0.0"></script>
+    <script src="/Public/Default/js/plugins/iCheck/icheck.min.js"></script>
+    <script type="text/javascript" src="/Public/Default/check/js/jquery.validate.min.js"></script> 
+    <script type="text/javascript" src="/Public/Default/check/js/messages_zh.min.js"></script> 
+    <script type="text/javascript" src="/Public/Default/check/js/validate-methods.js"></script> 
+  <script type="text/javascript">
+    $(function(){ 
+     
+  　
+
+    　$("#size").change(function(){ 
+  　　　　var size= $(this).val();
+          var color= $('#color').val();
+          price();
+  　　}); 
+
+
+    $("#color").change(function(){ 
+          var size= $('#size').val();
+  　　　　var color= $(this).val();
+          if(color==0){
+              alert('请选择颜色~');
+          }
+          if(size==0){
+              alert('请选择规格~');
+          }
+          price();
+  　　}); 
+    function price(){
+      var size= $('#size').val();
+  　　var color= $('#color').val();
+      
+      var arr=<?php echo json_encode($spec);?>;  
+      var aarr=eval(arr);  
+      for(i=0;i<aarr.length;i++){  
+          if(aarr[i]['size']==size && aarr[i]['color']==color){  
+             var goods_money=aarr[i]['goods_money'];  
+             $('#goods_money').val(goods_money);
+          } 
+      }  
+    }
+    
+
+}); 
+  </script>  
+</body>
+
+</html>

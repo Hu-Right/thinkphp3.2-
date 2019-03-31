@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>会员充值</title>
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Public/Index/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Public/Index/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/Public/Index/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/Public/Index/css/animate.min.css" rel="stylesheet">
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><a style="color:#00bb9c; margin-right:5px;" href="/Assistance/wantinvest/uId/1">我要充值</a></h5>
+                        <div class="ibox-tools">
+                            
+                        </div>
+                    </div>
+                    <div class="ibox-content">
+                        <form method="post" action="" class="form-horizontal" id="form-admin-add" >
+                        
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">公司银行名称：</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="{$Bankname}" disabled>
+                                </div>
+                            </div>
+							 <div class="form-group">
+                                <label class="col-sm-2 control-label">公司银行帐号：</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="{$Bankaccount}" disabled>
+                                </div>
+                            </div>
+							 <div class="form-group">
+                                <label class="col-sm-2 control-label">公司开户行：</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="{$bankdeposit}" disabled>
+                                </div>
+                            </div>
+							 <div class="form-group">
+                                <label class="col-sm-2 control-label">公司开户名称：</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="{$bankuser}" disabled>
+                                </div>
+                            </div>
+							 <div class="form-group">
+                                <label class="col-sm-2 control-label">公司支付宝帐号：</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="{$zhifubao}" disabled>
+                                </div>
+                            </div>
+							 <div class="form-group">
+                                <label class="col-sm-2 control-label">公司微信帐号：</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" value="{$weixin}" disabled>
+                                </div>
+                            </div>
+                                                          
+                            
+                                
+                                   <div class="form-group">
+                                <label class="col-sm-2 control-label">打款方式</label>
+                                    <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="mode" value="" >请输入我的充值方式如：建设银行
+                                </div>
+                            	</div>
+								
+								<div class="form-group">
+                                <label class="col-sm-2 control-label">打款帐号</label>
+                                    <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="accounts"  value="">
+                                </div>
+                            	</div>
+								<div class="form-group">
+                                <label class="col-sm-2 control-label">打款姓名</label>
+                                    <div class="col-sm-10">
+                                    <input type="text" class="form-control" name="name" value="">
+                                </div>
+                            	</div>
+								
+								  <div class="form-group">
+                                <label class="col-sm-2 control-label">充值金额（元）</label>
+                                    <div class="col-sm-10 wan-spinner-1">
+                                    <input style="height: 32px; margin-left:10px; margin-right:10px; text-align: center; border:1px solid #469987; " type="number" name="money" step="2500" id="money" value="2500">
+                                  
+                                    </div>
+                            	</div>
+								 					
+								<div class="form-group">
+                                <label class="col-sm-2 control-label">留言</label>
+                                    <div class="col-sm-10">
+                                    <textarea name="info" class="form-control" > </textarea>
+                                </div>
+                            	</div>
+								 
+
+                                 <div class="hr-line-dashed"></div>
+                            <div class="form-group" style="margin-top:-30px;">
+                                <label class="col-sm-2 control-label"></label>
+                                    <div class="col-sm-10">
+                                        <span style="color:#ff0000; font-weight:bold">温馨提示：提交前请确认是否已打款</span>
+                                    </div>
+                                 </div>
+                                
+                            <div class="hr-line-dashed" style="margin-top:-10px;"></div>
+                            <div class="form-group">
+                                <div class="col-sm-4 col-sm-offset-2">
+                            
+                             <input class="btn btn-primary" type="submit" value="确定已经打款">                                              
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+   
+    <script>
+        $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+    </script>
+    
+	
+	
+	
+	
+	
+	
+    <script type="text/javascript">
+	$(function(){
+
+	
+	
+	$("#form-admin-add").validate({
+		rules:{
+			uiUJiner:{
+				required:true,
+			},
+           uZfPwd:{
+                required:true,
+                minlength:6,
+                maxlength:6
+
+            },
+		}, 
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+});
+</script> 
+  
+  <script src="/Public/Default/dist/wan-spinner.js"></script> 
+  <script>
+  $(document).ready(function() {
+    var options = {
+      maxValue: 8000,
+      minValue: 500,
+      step: 500,
+      inputWidth: 150,
+      start: 0,
+      plusClick: function(val) {
+        console.log(val);
+      },
+      minusClick: function(val) {
+        console.log(val);
+      },
+      exceptionFun: function(val) {
+        console.log("excep: " + val);
+      },
+      valueChanged: function(val) {
+        console.log('change: ' + val);
+      }
+    }
+    $(".wan-spinner-1").WanSpinner(options);
+
+  });
+  </script>   
+    
+</body>
+
+</html>

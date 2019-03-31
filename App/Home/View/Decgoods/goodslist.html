@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物中心</title>
+    <link rel="shortcut icon" href="favicon.ico"> <link href="/Public/Index/css/bootstrap.min.css?v=3.3.6" rel="stylesheet">
+    <link href="/Public/Index/css/font-awesome.min.css?v=4.4.0" rel="stylesheet">
+    <link href="/Public/Index/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <link href="/Public/Index/css/animate.min.css" rel="stylesheet">
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+
+</head>
+
+<body class="gray-bg">
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><a style="color:#00bb9c; margin-right:5px;" href="">购物中心</a></h5>
+                        <div class="ibox-tools">
+                            
+                        </div>
+                    </div>
+                    <div class="ibox-content" style="height: 1030px;">
+					
+				
+							<volist name="list" id="vo">
+								<a  href="/Home/Decgoods/show/id/{$vo.id}" >
+									<div style="  width: 300px; float: left;    margin: 8px;   background:#FBEFEF;border-radius: 5px;">
+										<img src="{$vo.logo}"  style=" width: 300px; height: 300px;border-radius: 5px;">
+										<div style="text-align: -webkit-center;margin: 0 auto;width: 80%;  font-size: 14px; margin-top: 5px; font-weight: bold;  color: #5A5757;" >{$vo.goods_name}</div>
+										<div style="text-align: -webkit-center;margin: 0 auto;width: 80%;  font-size: 14px; margin-top: 5px; font-weight: bold;  color:#EF0000;" >￥{$vo.shop_price}</div>
+									</div>
+								</a>
+							</volist>
+					
+					
+						
+						
+                    </div>
+                </div>
+            </div>{$page}
+        </div>
+    </div>
+
+
+    <script>
+        $(document).ready(function(){$(".i-checks").iCheck({checkboxClass:"icheckbox_square-green",radioClass:"iradio_square-green",})});
+    </script>
+    
+    <script type="text/javascript">
+	$(function(){
+	$("#form-admin-add").validate({
+		rules:{
+			uiUJiner:{
+				required:true,
+			},
+           uZfPwd:{
+                required:true,
+                minlength:6,
+                maxlength:6
+
+            },
+		}, 
+		onkeyup:false,
+		focusCleanup:true,
+		success:"valid",
+		submitHandler:function(form){
+			$(form).ajaxSubmit();
+			var index = parent.layer.getFrameIndex(window.name);
+			parent.$('.btn-refresh').click();
+			parent.layer.close(index);
+		}
+	});
+});
+</script> 
+  
+  <script src="/Public/Default/dist/wan-spinner.js"></script> 
+  <script>
+  $(document).ready(function() {
+    var options = {
+      maxValue: 8000,
+      minValue: 500,
+      step: 500,
+      inputWidth: 150,
+      start: 0,
+      plusClick: function(val) {
+        console.log(val);
+      },
+      minusClick: function(val) {
+        console.log(val);
+      },
+      exceptionFun: function(val) {
+        console.log("excep: " + val);
+      },
+      valueChanged: function(val) {
+        console.log('change: ' + val);
+      }
+    }
+    $(".wan-spinner-1").WanSpinner(options);
+
+  });
+  </script>   
+    
+</body>
+
+</html>

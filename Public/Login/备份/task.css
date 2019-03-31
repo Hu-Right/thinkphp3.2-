@@ -1,0 +1,159 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "宋体";
+}
+a,ul,li{
+    text-decoration: none;
+    list-style: none;
+}
+body{
+     background:#EFEEF4;
+}
+.task{
+    width:100%;
+    height:100%;
+}
+.task .header{
+    width:100%;
+    height:3rem;
+    background:#DE4410;
+    line-height: 3rem;
+    text-align: center;
+    color:#fff;
+    font-family: "宋体";
+}
+/*轮播图*/
+.banner{
+    width:100%;
+    height:10.33rem;
+    background: red;
+}
+.banner ul li{
+    width:100%;
+    height:10.33rem;
+}
+.banner ul li img{
+    width:100%;
+    height:10.33rem;
+}
+/*公告*/
+.notice{
+    width:100%;
+    height:2rem;
+    line-height: 2rem;
+}
+.notice i{
+    float: left;
+    font-size:1.3rem;
+    margin-left: 1.5rem;
+}
+.notice p{
+    font-size:0.8rem;
+    margin-left: 4rem;
+}
+.notice p a{
+    color:red;
+}
+
+.btn{
+    width:100%;
+    height:4rem;
+    background:#F1F3C4;  
+}
+.btn i{
+    float: left;
+    color:#67D34C;
+    font-size:3rem;
+    line-height: 4rem;
+    margin-left: 0.8rem;
+}
+.btn p{
+    display: block;
+    width:12rem;
+    color:#539BD6;
+    font-size:0.9rem;
+    line-height: 2.2rem;
+    margin-left: 4.5rem;
+}
+.btn span{
+    font-size:0.4rem;
+    padding-left: 1.2rem;
+}
+.btn button{
+    width:4rem;
+    height:1.5rem;
+    color:#fff;
+    background:#F01414;
+    border:none;
+    border-radius: 0.4rem;
+    position: fixed;
+    top:16.5rem;
+    right: 1rem; 
+}
+.list-text{
+    width:95%;
+    height:6rem;
+    margin: auto;
+    text-align: center;
+    margin-top: 0.8rem;
+}
+.list-text ul{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+}
+.list-text ul li{
+    width:7rem;
+    height:7rem;
+    float: left;
+    background:#FFFFFF;
+}
+/*.list-text ul li.border-left{
+    border-left:1px solid #f5f5f5;
+    border-right: 1px solid #f5f5f5;
+}*/
+.list-text ul li a i{
+    font-size:2rem;
+    color:red;
+    line-height: 4.8rem;
+}
+.list-text ul li a p{
+    font-size:0.3rem;
+    color:#000;
+}
+
+
+/*底部fonter*/
+.fonter{
+    width:100%;
+    height:3.5rem;
+    background:#f5f5f5;
+    position: fixed;
+    bottom:0;left:0;
+    z-index: 999;
+}
+.fonter ul{
+    margin-top: 0.5rem;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-around;
+    
+}
+.fonter ul li{
+    width:5rem;
+    height:3rem;
+    float: left;
+    
+    text-align: center;
+    line-height:rem;
+}
+.fonter ul li i{
+    color:#E35500;
+    font-size:1.5rem;
+    
+}
+.fonter ul li a p{
+    font-size:0.3rem;
+    color:#e35500;
+}

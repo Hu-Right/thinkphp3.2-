@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="renderer" content="webkit">
+		<title></title>
+		<link rel="stylesheet" href="__PUBLIC__/Admin/css/pintuer.css">
+		<link rel="stylesheet" href="__PUBLIC__/Admin/css/admin.css">
+		<script src="__PUBLIC__/Admin/js/jquery.js"></script>
+		<script src="__PUBLIC__/Admin/js/pintuer.js"></script>
+	</head>
+<body>
+<div class="panel admin-panel">
+  <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>层碰设置</strong></div>
+  <div class="body-content">
+    <form method="post" class="form-x" action="__SELF__">  
+	
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>第一层：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$touchone}" name="touchone"/>%
+			<div class="tips"></div>
+		</div>
+	</div>
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>第二层以下：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$touchtwo}" name="touchtwo"/>%
+			<div class="tips"></div>
+		</div>
+	</div>
+	
+	<div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>量碰设置</strong></div>
+	<br/>
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>金卡会员：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$amountjin}" name="amountjin"/>%
+			<div class="tips"></div>
+		</div>
+	</div>
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>钻卡会员：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$amountzuan}" name="amountzuan"/>%
+			<div class="tips"></div>
+		</div>
+	</div>
+	<div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>见点设置</strong></div>
+	<br/>
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>层级：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$jiandianceng}" name="jiandianceng"/>层
+			<div class="tips"></div>
+		</div>
+	</div>
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>金卡会员：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$jiandianjin}" name="jiandianjin"/>元
+			<div class="tips"></div>
+		</div>
+	</div>	
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>钻卡会员：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$jiandianzuan}" name="jiandianzuan"/>元
+			<div class="tips"></div>
+		</div>
+	</div>		
+	<div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>感恩奖设置</strong></div>
+	<br/>
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>直推一层：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$zhituiyi}" name="zhituiyi"/>%
+			<div class="tips"></div>
+		</div>
+	</div>	
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>直推二层：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$zhituier}" name="zhituier"/>%
+			<div class="tips"></div>
+		</div>
+	</div>			
+
+	<div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>领导奖设置</strong></div>
+	<br/>
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>一星小区达到：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$yixingmoney}" name="yixingmoney"/>元
+			<div class="tips"></div>
+		</div>
+	</div>	
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>一星网下新生业绩提成：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$yixingtc}" name="yixingtc"/>%
+			<div class="tips"></div>
+		</div>
+	</div>	
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>二星大小区各达到：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$erxingmoney}" name="erxingmoney"/>星
+			<div class="tips"></div>
+		</div>
+	</div>	
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>二星网下新生业绩提成：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$erxingtc}" name="erxingtc"/>%
+			<div class="tips"></div>
+		</div>
+	</div>	
+	
+		<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>三星大小区各达到：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$sanxingmoney}" name="sanxingmoney"/>星
+			<div class="tips"></div>
+		</div>
+	</div>	
+	<div class="form-group" style="margin-bottom: 0px; padding-bottom: 5px;">
+		<div class="label">
+			<label>三星网下新生业绩提成：</label>
+		</div>
+		<div class="field">
+			<input type="text" class="input w50" value="{$sanxingtc}" name="sanxingtc"/>%
+			<div class="tips"></div>
+		</div>
+	</div>	
+	
+	
+	
+	
+	
+	
+	
+	 <div class="form-group">
+        <div class="label">
+          <label></label>
+        </div>
+        <div class="field">
+          <button class="button bg-main icon-check-square-o" type="submit"> 确认修改</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+</body></html>

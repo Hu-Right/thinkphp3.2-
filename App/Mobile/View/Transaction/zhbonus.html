@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>奖金转换激活币</title>
+   
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="/Public/Mobile/css/page.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/all.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mui.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/mobile.css"/>
+    <link rel="stylesheet" type="text/css" href="/Public/Mobile/css/iconfont.css"/>
+    <link href="/Public/Index/css/style.min.css?v=4.1.0" rel="stylesheet">
+	<script src="/Public/Mobile/js/rem.js"></script> 
+</head>
+
+<body class="gray-bg" style="background-color: #ffffff;">
+<!--header star-->
+		<header class="mui-bar mui-bar1 mui-bar-nav mui-bar-nav1" id="header">
+			<a class="btn" href="javascript:history.go(-1)">
+	            <i class="iconfont icon-fanhui"></i>
+	        </a>
+	        <div class="top-sch-box top-sch-boxtwo top-sch-boxthree flex-col">
+	                      返回
+	        </div>
+	    </header>
+	    <!--header end-->
+		<div class="warp warpthree clearfloat">
+		<div class="h-top h-toptwo clearfloat box-s">
+			<p class="tu"><img src="/Public/Mobile/img/touxiang.png"/></p>
+			<p class="nr">{$user.username}</p>
+		</div>
+    <div class="wrapper wrapper-content animated fadeInRight">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="ibox float-e-margins">
+                    <div class="ibox-title">
+                        <h5><a style="color:#00bb9c;margin-right:5px;" href="">奖金转换激活币</a>
+						</h5>
+                        <div class="ibox-tools">
+                           
+                        </div>
+                    </div>
+                    <div class="ibox-content" >
+                        <form method="post" action="__APP__/Mobile/Transaction/zhbonus" class="form-horizontal" id="form-admin-add" >
+                            
+                   
+                            
+                             <div class="form-hy">
+                                <label class="xm">当前奖金：</label>
+                                    <div class="xm-content" style="margin-top:8px">
+                                        <span style="margin-left:10px; font-weight: bold; color:#07bfa3">可用 {$user.bonus} 元 </span> 
+                                    </div>
+                                 </div>
+
+                                  
+                                
+								<div class="clear"></div>
+                                 <div class="form-hy">
+                                <label class="xm">转换激活币数：</label>
+                                    <div class="xm-content">
+                                        <input type="text" name="money" id="money" placeholder="请输入转换激活币的数量" >
+                                    </div>
+                                 </div>
+			   
+                            
+                                
+                                 <div class="hr-line"></div>   
+                              <div class="button-center">
+							  
+									<div class="col-sm-8 col-sm-offset-2">
+										<input class="btn btn-primary" type="submit" value="我要转换">
+									</div>
+								</div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+	<!--footer star-->
+	<footer class="page-footer fixed-footer" id="footer">
+		<ul>
+			<li>
+				<a href="__APP__/Mobile/Index/index">
+					<i class="iconfont icon-shouye"></i>
+					<p>首页</p>
+				</a>
+			</li>
+			 <li  class="active">
+				<a href="__APP__/Mobile/FenHong/index">
+					<i class="iconfont icon-yaoqingjiangli"></i>
+					<p>分红</p>
+				</a>
+			</li>
+			<li>
+				<a href="__APP__/Mobile/Member/center">
+					<i class="iconfont icon-wode"></i>
+					<p>我的</p>
+				</a>
+			</li>
+		</ul>
+	</footer>
+		<!--footer end-->
+    
+    
+</body>
+
+</html>
